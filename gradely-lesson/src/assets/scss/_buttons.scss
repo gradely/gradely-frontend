@@ -1,0 +1,28 @@
+.btn-soft-accent {
+    background: $brand-accent-light;
+    border: toRem(1) solid $brand-accent;
+    color: $brand-navy;
+
+
+    &:hover {
+        background: $brand-inverse-light;
+        border: toRem(1) solid $brand-inverse;
+    }
+
+    &:disabled {
+        border: toRem(1) solid $border-grey-dark;
+    }
+}
+
+.btn-soft-grey {
+    background: $color-white;
+    color: $brand-navy;
+
+    &:hover {
+        background: $brand-inverse-light;
+    }
+
+    &:disabled {
+        border: toRem(1) solid $border-grey-dark;
+    }
+}

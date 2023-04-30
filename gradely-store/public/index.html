@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          "gtm.start": new Date().getTime(),
+          event: "gtm.js",
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-MPB4JRX");
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"
+    />
+
+    <!-- Twitter Share -->
+    <meta name="twitter:card" πcontent="summary_large_image" />
+    <meta name="twitter:site" content="Gradely" />
+    <meta name="twitter:creator" content="@Gradely" />
+    <meta name="twitter:title" content="Gradely" />
+    <meta
+      name="twitter:image"
+      content="https://res.cloudinary.com/gradely/image/upload/v1639834533/favicon_l7orij.png"
+    />
+
+    <!-- Facebook/LinkedIn Share -->
+    <meta property="og:url" content="http://<?php echo $root; ?>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Gradely" />
+    <meta property="og:description" content="Personalised learning platform" />
+    <meta
+      property="og:image"
+      content="https://res.cloudinary.com/gradely/image/upload/v1639834533/favicon_l7orij.png"
+    />
+
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+    <title>Personalised learning platform | Gradely.CO</title>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-MPB4JRX"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <noscript>
+      <strong
+        >We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work
+        properly without JavaScript enabled. Please enable it to
+        continue.</strong
+      >
+    </noscript>
+    <div id="app"></div>
+    <!-- <script src="bundle.js"></script> -->
+    <!-- built files will be auto injected -->
+  </body>
+</html>

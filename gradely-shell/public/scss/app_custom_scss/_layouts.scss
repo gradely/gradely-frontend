@@ -1,0 +1,175 @@
+.topnav-offset {
+  top: toRem(95) !important;
+
+  @include breakpoint-down(sm) {
+    top: toRem(90) !important;
+  }
+
+  @include breakpoint-custom-down(450) {
+    top: toRem(70) !important;
+  }
+}
+
+.topnav-base-offset {
+  top: toRem(62) !important;
+  padding-top: toRem(5);
+
+  @include breakpoint-down(lg) {
+    top: toRem(60) !important;
+  }
+
+  @include breakpoint-down(xs) {
+    top: toRem(50) !important;
+  }
+}
+
+.topnav-sub-offset {
+  top: toRem(165) !important;
+  padding-top: toRem(5);
+
+  @include breakpoint-down(md) {
+    top: toRem(90) !important;
+  }
+
+  @include breakpoint-down(xs) {
+    top: toRem(80) !important;
+  }
+}
+
+.header-attach {
+  @include breakpoint-down(xs) {
+    top: toRem(50) !important;
+  }
+}
+
+.gradely-container {
+  margin: 0 auto;
+
+  @include breakpoint-up(sm) {
+    max-width: toRem(680);
+  }
+
+  @include breakpoint-up(md) {
+    max-width: toRem(980);
+  }
+
+  @include breakpoint-up(lg) {
+    max-width: toRem(1000);
+  }
+
+  @include breakpoint-up(xl) {
+    max-width: toRem(1120);
+  }
+}
+
+.gradely-container {
+  .gradely-row {
+    @include flex-row-center-nowrap;
+    align-items: flex-start;
+
+    .content-view {
+      width: 90%;
+      height: auto;
+      margin: 0 auto;
+
+      @include breakpoint-custom-down(1020) {
+        width: 95%;
+      }
+
+      @include breakpoint-down(lg) {
+        width: 100%;
+      }
+
+      @include breakpoint-down(md) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// FEED LAYOUT STYLING
+.feed-timeline-row {
+  @include flex-row-between-wrap;
+  align-items: flex-start;
+
+  .timeline {
+    width: 59.65%;
+
+    @include breakpoint-down(xl) {
+      width: 61.5%;
+    }
+
+    @include breakpoint-down(lg) {
+      width: 62%;
+    }
+
+    @include breakpoint-down(md) {
+      width: 100%;
+      order: 2;
+      margin-bottom: toRem(-10) !important;
+    }
+  }
+
+  .upcoming {
+    width: 37.45%;
+    top: unset;
+
+    @include breakpoint-down(xl) {
+      width: 35.5%;
+    }
+
+    @include breakpoint-down(lg) {
+      width: 100%;
+      order: 1;
+      margin-bottom: toRem(17);
+    }
+
+    @include breakpoint-down(xs) {
+      margin-bottom: toRem(12.5);
+    }
+  }
+
+  .fixed-upcoming {
+    position: fixed;
+    width: toRem(342);
+    left: 58%;
+
+    @include breakpoint-down(xl) {
+      width: toRem(305);
+      left: 60.25%;
+    }
+
+    @include breakpoint-custom-down(1080) {
+      width: toRem(300);
+      left: 61.5%;
+    }
+
+    @include breakpoint-custom-down(1020) {
+      width: toRem(315);
+    }
+
+    @include breakpoint-down(lg) {
+      width: toRem(330);
+      left: unset;
+      right: 2.25%;
+    }
+
+    @include breakpoint-custom-down(940) {
+      width: toRem(300);
+    }
+
+    @include breakpoint-custom-down(860) {
+      width: toRem(280);
+    }
+
+    @include breakpoint-custom-down(780) {
+      width: toRem(270);
+    }
+
+    @include breakpoint-down(md) {
+      position: unset;
+      order: 1;
+      width: 100%;
+    }
+  }
+}

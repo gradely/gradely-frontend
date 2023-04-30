@@ -1,0 +1,82 @@
+/* =================
+LABEL COMPACT STYLING
+==================== */
+@mixin label_compact {
+    position: absolute;
+    top: toRem(-11);
+    left: toRem(24);
+    background: $white-text;
+    padding: toRem(1) toRem(4);
+    text-transform: uppercase;
+    font-size: toRem(11.75);
+    color: $color-ash;
+    font-weight: 600;
+    z-index: 99;
+
+    @include breakpoint-down(lg) {
+        font-size: toRem(11.25);
+    }
+
+    @include breakpoint-down(xs) {
+        font-size: toRem(10.75);
+        left: toRem(8) !important;
+    }
+
+    @include breakpoint-custom-down(350) {
+        font-size: toRem(10.5);
+    }
+}
+
+// INPUT AND LABEL COMPACT STYLING
+.compact-row {
+    position: relative;
+    margin-bottom: toRem(23);
+
+    .label-compact {
+        @include label_compact;
+    }
+
+    .label-sm {
+        top: toRem(-8);
+        left: toRem(10);
+        text-transform: unset !important;
+        letter-spacing: 0.023rem;
+    }
+
+    input,
+    select {
+        @include font-height(12.75, 16);
+
+        &::placeholder {
+            @include breakpoint-down(lg) {
+                font-size: toRem(11.75);
+            }
+
+            @include breakpoint-down(xs) {
+                @include font-height(11.25, 16);
+            }
+        }
+    }
+
+    select {
+        @include breakpoint-down(xs) {
+            @include font-height(11.75, 16);
+        }
+    }
+}
+
+.form-input-wrapper {
+    position: relative;
+
+    .mx-datepicker {
+        width: 100%;
+    }
+
+    .icon {
+        font-size: toRem(16) !important;
+        color: $brand-inverse !important;
+        @include center-y;
+        right: toRem(10);
+        z-index: 99;
+    }
+}

@@ -1,0 +1,25 @@
+version: '3.9' 
+services:  
+  gradely-store:
+    container_name: store-app
+    build: 
+      context: ../gradely-store
+      dockerfile: Dockerfile
+    ports:
+      - 8090:8080
+    volumes: 
+      - ../gradely-store:/app
+      - '/app/node_modules'
+    command: npm run serve
+  
+  gradely-lms:
+    container_name: lms-app
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8093:8080
+    volumes: 
+      - .:/app
+      - '/app/node_modules'
+    command: npm run serve

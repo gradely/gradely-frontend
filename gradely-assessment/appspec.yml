@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/vue/test/assessmentdev
+hooks:
+  AfterInstall:
+    - location: scripts/install.sh
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: scripts/start.sh
+      timeout: 300
+      runas: root

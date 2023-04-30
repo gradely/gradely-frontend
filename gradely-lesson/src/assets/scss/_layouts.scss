@@ -1,0 +1,57 @@
+.topnav-offset {
+    top: toRem(95) !important;
+
+    @include breakpoint-down(sm) {
+        top: toRem(90) !important;
+    }
+
+    @include breakpoint-custom-down(450) {
+        top: toRem(70) !important;
+    }
+}
+
+.topnav-base-offset {
+    top: toRem(62) !important;
+    padding-top: toRem(5);
+
+    @include breakpoint-down(lg) {
+        top: toRem(60) !important;
+    }
+
+    @include breakpoint-down(xs) {
+        top: toRem(50) !important;
+    }
+}
+
+.topnav-sub-offset {
+    top: toRem(165) !important;
+    padding-top: toRem(5);
+
+    @include breakpoint-down(md) {
+        top: toRem(90) !important;
+    }
+
+    @include breakpoint-down(xs) {
+        top: toRem(76) !important;
+    }
+}
+
+.gradely-container {
+    margin: 0 auto;
+
+    @include breakpoint-up(sm) {
+        max-width: toRem(680);
+    }
+
+    @include breakpoint-up(md) {
+        max-width: toRem(980);
+    }
+
+    @include breakpoint-up(lg) {
+        max-width: toRem(1020);
+    }
+
+    @include breakpoint-up(xl) {
+        max-width: toRem(1140);
+    }
+}

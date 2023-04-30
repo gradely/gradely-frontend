@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/vue/test/lms
+hooks:
+  AfterInstall:
+    - location: scripts/install-app.sh
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: scripts/start-app.sh
+      timeout: 300
+      runas: root

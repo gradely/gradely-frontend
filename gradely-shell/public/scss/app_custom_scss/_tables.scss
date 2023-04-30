@@ -1,0 +1,1056 @@
+.student-report-table {
+    .table-header {
+        @include font-height(10.5, 15);
+        padding: toRem(6) toRem(10);
+        margin-bottom: toRem(5);
+        color: $color-grey-dark;
+        text-transform: uppercase;
+        border-bottom: toRem(1) solid rgba($border-grey, .9);
+
+        @include breakpoint-down(lg) {
+            @include font-height(10.25, 15);
+        }
+    }
+
+    .table-body,
+    .table-header {
+        width: 100%;
+        @include flex-row-between-nowrap;
+    }
+
+    .column-one {
+        width: 55%;
+
+        @include breakpoint-custom-down(380) {
+            width: 68%;
+        }
+    }
+
+    .column-two {
+        width: 20%;
+
+        @include breakpoint-down(xs) {
+            width: 18%;
+        }
+
+        @include breakpoint-custom-down(380) {
+            width: 20%;
+        }
+    }
+
+    .column-three {
+        width: 25%;
+
+        @include breakpoint-down(xs) {
+            width: 20%;
+        }
+
+        @include breakpoint-custom-down(380) {
+            display: none;
+        }
+    }
+}
+
+
+// WEEKLY HEADER 
+.weekly-header {
+    @include flex-row-start-nowrap;
+    @include font-height(11.25, 15);
+    color: $border-grey-dark;
+    padding: 0 toRem(10) toRem(6);
+    margin-bottom: toRem(2);
+    text-transform: uppercase;
+    border-bottom: toRem(1) solid $color-grey-light;
+
+    @include breakpoint-down(sm) {
+        @include font-height(10.5, 15);
+    }
+
+    @include breakpoint-down(xs) {
+        padding: 0 toRem(7) toRem(6);
+        @include font-height(10, 14);
+    }
+}
+
+.weekly-by-5-columns {
+    .column-select {
+        width: 4%;
+    }
+
+    .column-one {
+        width: 30%;
+
+        @include breakpoint-down(md) {
+            width: 40%;
+        }
+
+        @include breakpoint-down(sm) {
+            width: 55%;
+        }
+
+        @include breakpoint-down(xs) {
+            width: 80%;
+        }
+    }
+
+    .column-two {
+        width: 17%;
+
+        @include breakpoint-down(md) {
+            width: 35%;
+        }
+
+        @include breakpoint-down(sm) {
+            width: 35%;
+        }
+
+        @include breakpoint-down(xs) {
+            display: none;
+        }
+    }
+
+    .column-three {
+        width: 19%;
+
+        @include breakpoint-down(md) {
+            display: none;
+        }
+
+        @include breakpoint-down(sm) {
+            display: none;
+        }
+    }
+
+    .column-four {
+        width: 16%;
+
+        @include breakpoint-down(md) {
+            display: none;
+        }
+    }
+
+    .column-five {
+        width: 14%;
+
+        @include breakpoint-down(md) {
+           width: 22%;
+        }
+
+        @include breakpoint-down(xs) {
+            width: 32%;
+        }
+    }
+}
+
+.weekly-by-3-columns {
+    .column-one {
+        width: 60%;
+
+        @include breakpoint-down(sm) {
+            width: 65%;
+        }
+
+        @include breakpoint-down(xs) {
+            width: 80%;
+        }
+    }
+
+    .column-two {
+        width: 25%;
+
+        @include breakpoint-down(sm) {
+            width: 20%;
+        }
+
+        @include breakpoint-down(xs) {
+            display: none;
+        }
+    }
+
+    .column-three {
+        width: 15%;
+
+        @include breakpoint-down(sm) {
+            width: 20%;
+
+        }
+    }
+}
+
+.weekly-body {
+    @include flex-row-start-nowrap;
+    padding: toRem(10);
+
+    @include breakpoint-down(xs) {
+        padding: toRem(8) toRem(7);
+    }
+
+    .label {
+        left: 0;
+        top: 0;
+        width: toRem(2);
+        border-radius: toRem(3) 0 0 toRem(3);
+        display: none;
+    }
+
+    &:hover {
+        background: rgba($white-text, 0.85) !important;
+
+        .label {
+            display: unset;
+        }
+    }
+
+    .selection {
+        input {
+            margin-left: toRem(4.5);
+
+            &:after {
+                @include breakpoint-down(sm) {
+                    @include square-shape(17);
+                }
+            }
+
+            &:checked:before {
+                @include breakpoint-down(sm) {
+                    @include rectangle-shape(5, 11);
+                }
+            }
+        }
+    }
+
+    .column-one {
+        @include flex-row-start-nowrap;
+
+        .avatar {
+            @include square-shape(40);
+
+            @include breakpoint-down(xl) {
+                @include square-shape(36);
+            }
+
+            @include breakpoint-down(md) {
+                @include square-shape(34);
+                border-radius: toRem(5);
+            }
+
+            .icon,
+            img {
+                @include center-placement;
+                font-size: toRem(20);
+
+                @include breakpoint-down(xl) {
+                    font-size: toRem(18);
+                }
+
+                @include breakpoint-down(xs) {
+                    font-size: toRem(16);
+                }
+            }
+
+            img {
+                @include square-shape(18);
+
+                @include breakpoint-down(md) {
+                    @include square-shape(17);
+                }
+            }
+        }
+
+        .title-text {
+            @include font-height(13, 18);
+
+            @include breakpoint-down(lg) {
+                @include font-height(12, 16);
+            }
+
+            @include breakpoint-down(md) {
+                @include font-height(11.75, 16);
+            }
+
+            @include breakpoint-down(xs) {
+                @include font-height(11.5, 15.5 );
+            }
+        }
+
+        .meta-text {
+            @include font-height(11.75, 15);
+
+            @include breakpoint-down(xl) {
+                @include font-height(11, 15);
+            }
+
+            @include breakpoint-down(lg) {
+                @include font-height(10.5, 15);
+            }
+
+            @include breakpoint-down(md) {
+                @include font-height(10.75, 14.5);
+            }
+        }
+    }
+
+    .column-two,
+    .column-three,
+    .column-four,
+    .column-five {
+        @include font-height(12.5, 19);
+        color: $color-ash;
+        padding-right: toRem(10);
+
+        @include breakpoint-down(lg) {
+            @include font-height(12, 17);
+        }
+
+        @include breakpoint-down(md) {
+            @include font-height(11.5, 16);
+        }
+
+        @include breakpoint-down(sm) {
+            @include font-height(11.25, 16);
+        }
+    }
+}
+
+// STUDENT TABLE 
+.student-table-header {
+    @include flex-row-between-nowrap;
+    @include font-height(11.75, 16);
+    padding-bottom: toRem(5);
+    border-bottom: toRem(1) solid $color-grey-light;
+    color: $border-grey-dark;
+    margin-bottom: toRem(2);
+
+
+    @include breakpoint-down(xl) {
+        @include font-height(11.25, 15);
+    }
+
+    @include breakpoint-down(lg) {
+        @include font-height(10.75, 15);
+    }
+
+    @include breakpoint-down(md) {
+        @include font-height(10.25, 14);
+    }
+}
+
+.student-table-no-check {
+    .column-one {
+        width: 43%;
+        padding-left: toRem(60);
+
+
+        @include breakpoint-down(xl) {
+            padding-left: toRem(50);
+        }
+
+        @include breakpoint-down(lg) {
+            padding-left: toRem(30);
+            width: 40%;
+        }
+
+        @include breakpoint-down(md) {
+            padding-left: toRem(20);
+            width: 44%;
+        }
+
+        @include breakpoint-down(sm) {
+            width: 60%;
+        }
+
+        @include breakpoint-down(sm) {
+            padding-left: toRem(10);
+            width: 60%;
+        }
+    }
+
+    .column-two {
+        width: 27%;
+
+        @include breakpoint-down(lg) {
+            width: 30%;
+        }
+
+        @include breakpoint-down(md) {
+            width: 38%;
+        }
+
+        @include breakpoint-down(sm) {
+            width: 20%;
+        }
+    }
+
+    .column-three {
+        width: 20%;
+
+        @include breakpoint-down(lg) {
+            width: 18%;
+        }
+
+        @include breakpoint-down(md) {
+            display: none;
+        }
+    }
+
+    .column-four {
+        width: 10%;
+
+        @include breakpoint-down(md) {
+            width: 12%;
+        }
+
+        @include breakpoint-down(sm) {
+            width: 15%;
+        }
+
+        @include breakpoint-down(xs) {
+            width: 18%;
+        }
+    }
+}
+
+.student-table-check {
+    .column-one {
+        width: 8%;
+        padding-left: toRem(40);
+
+        @include breakpoint-down(lg) {
+            padding-left: toRem(30);
+        }
+
+        @include breakpoint-down(md) {
+            padding-left: toRem(25);
+            width: 9%;
+        }
+
+        @include breakpoint-down(sm) {
+            padding-left: toRem(25);
+            width: 10%;
+        }
+
+        @include breakpoint-down(xs) {
+            padding-left: toRem(20);
+            padding-right: toRem(10);
+            width: 13%;
+        }
+
+        input {
+            position: relative;
+            top: toRem(-5);
+
+            @include breakpoint-down(lg) {
+                &:after {
+                    @include square-shape(16);
+                    border: 0.0625rem solid $border-grey-dark;
+                }
+
+                &:checked:before {
+                    left: 4.5px;
+                    @include rectangle-shape(5.5, 10);
+                    border: 0.0625rem solid $color-white;
+                    border-top-width: 0;
+                    border-left-width: 0;
+                }
+            }
+
+        }
+    }
+
+    .column-two {
+        width: 40%;
+
+        @include breakpoint-down(sm) {
+            width: 54%;
+        }
+    }
+
+    .column-three {
+        width: 27%;
+
+        @include breakpoint-down(sm) {
+            display: none !important;
+        }
+    }
+
+    .column-four {
+        width: 22%;
+
+        @include breakpoint-down(sm) {
+            width: 26%;
+        }
+    }
+}
+
+.student-table-body {
+    @include flex-row-between-nowrap;
+    position: relative;
+    padding-top: toRem(14);
+    padding-bottom: toRem(14);
+
+    @include breakpoint-down(lg) {
+        padding-top: toRem(12);
+        padding-bottom: toRem(12);
+    }
+
+    @include breakpoint-down(md) {
+        padding-top: toRem(10);
+        padding-bottom: toRem(10);
+    }
+
+    .label {
+        left: 0;
+        top: 0;
+        width: toRem(2.5);
+        border-radius: toRem(3) 0 0 toRem(3);
+        display: none;
+
+        @include breakpoint-down(sm) {
+            width: toRem(2);
+        }
+    }
+
+    &:hover {
+        background: rgba($white-text, 0.85) !important;
+
+        .label {
+            display: unset;
+        }
+    }
+
+    .student-info {
+        @include flex-row-start-nowrap;
+        padding-right: toRem(10);
+
+        .avatar {
+            @include square-shape(40);
+            margin-right: toRem(12);
+
+            @include breakpoint-down(xl) {
+                @include square-shape(38);
+            }
+
+            @include breakpoint-down(lg) {
+                margin-right: toRem(8);
+                @include square-shape(36);
+            }
+
+            @include breakpoint-down(md) {
+                @include square-shape(34);
+            }
+
+            @include breakpoint-down(sm) {
+                @include square-shape(32);
+            }
+
+            @include breakpoint-down(xs) {
+                @include square-shape(30);
+            }
+
+            .avatar-text {
+                font-size: toRem(12);
+
+                @include breakpoint-down(lg) {
+                    font-size: toRem(11);
+                }
+
+                @include breakpoint-down(md) {
+                    font-size: toRem(10.25);
+                }
+
+                @include breakpoint-down(sm) {
+                    font-size: toRem(10);
+                }
+
+                @include breakpoint-down(xs) {
+                    font-size: toRem(9);
+                }
+            }
+        }
+
+        .name {
+            @include font-height(12.75, 18);
+            @include transition(0.4s);
+            margin-bottom: toRem(2);
+
+            &:hover {
+                color: $brand-accent !important;
+            }
+
+            @include breakpoint-down(xl) {
+                @include font-height(13.5, 18);
+                margin-bottom: toRem(1);
+            }
+
+            @include breakpoint-down(lg) {
+                @include font-height(12.75, 17);
+            }
+
+            @include breakpoint-down(md) {
+                @include font-height(12.25, 17);
+            }
+
+            @include breakpoint-down(sm) {
+                @include font-height(11.75, 16);
+            }
+
+            @include breakpoint-down(xs) {
+                @include font-height(11.25, 16);
+            }
+        }
+
+        .class-year {
+            @include font-height(11.75, 16);
+
+            @include breakpoint-down(xl) {
+                @include font-height(11.5, 15);
+            }
+
+            @include breakpoint-down(lg) {
+                @include font-height(11.25, 14);
+            }
+
+            @include breakpoint-down(sm) {
+                @include font-height(11, 13);
+            }
+
+            @include breakpoint-down(xs) {
+                @include font-height(10.75, 13);
+            }
+        }
+    }
+
+    .parent-info {
+        @include flex-row-start-nowrap;
+
+        .avatar {
+            @include square-shape(40);
+            margin-right: toRem(12);
+
+            @include breakpoint-down(xl) {
+                @include square-shape(38);
+            }
+
+            @include breakpoint-down(lg) {
+                margin-right: toRem(8);
+                @include square-shape(36);
+            }
+
+            @include breakpoint-down(md) {
+                @include square-shape(34);
+            }
+
+            @include breakpoint-down(sm) {
+                @include square-shape(32);
+            }
+
+            @include breakpoint-down(xs) {
+                @include square-shape(30);
+            }
+
+            .avatar-text {
+                font-size: toRem(12);
+
+                @include breakpoint-down(lg) {
+                    font-size: toRem(11);
+                }
+
+                @include breakpoint-down(md) {
+                    font-size: toRem(10.25);
+                }
+
+                @include breakpoint-down(sm) {
+                    font-size: toRem(10);
+                }
+
+                @include breakpoint-down(xs) {
+                    font-size: toRem(9);
+                }
+            }
+        }
+
+        .empty-state {
+            @include square-shape(34);
+            border: toRem(1) solid $border-grey;
+
+            @include breakpoint-down(sm) {
+                @include square-shape(30);
+            }
+
+            @include breakpoint-down(xs) {
+                @include square-shape(28);
+            }
+
+            .icon {
+                @include center-placement;
+                font-size: toRem(15);
+
+                @include breakpoint-down(xs) {
+                    font-size: toRem(12.5);
+                }
+            }
+        }
+
+        .name {
+            @include font-height(12.75, 18);
+
+            @include breakpoint-down(lg) {
+                @include font-height(12, 17);
+            }
+
+            @include breakpoint-down(md) {
+                @include font-height(11.5, 17);
+            }
+
+            @include breakpoint-down(sm) {
+                display: none;
+            }
+        }
+
+        .edit-parent {
+            @include square-shape(32);
+            margin-left: toRem(3);
+
+            @include breakpoint-down(sm) {
+                margin-left: toRem(-8);
+            }
+
+            .icon {
+                @include center-placement;
+                font-size: toRem(16);
+                color: $brand-accent;
+
+                @include breakpoint-down(lg) {
+                    font-size: toRem(14);
+                }
+
+                @include breakpoint-down(sm) {
+                    font-size: toRem(15);
+                }
+
+                &:hover {
+                    color: $brand-inverse;
+                }
+            }
+        }
+    }
+
+    .subscription {
+        @include font-height(12.75, 18);
+
+        @include breakpoint-down(lg) {
+            @include font-height(12, 17);
+        }
+
+        @include breakpoint-down(md) {
+            @include font-height(11.5, 16);
+        }
+    }
+
+    .options {
+        border-radius: toRem(10) !important;
+        background: rgba($border-grey, .3);
+        @include square-shape(32);
+
+        @include breakpoint-down(sm) {
+            @include square-shape(28);
+            right: toRem(-17);
+        }
+
+        .icon {
+            @include center-placement;
+            color: $border-grey-dark;
+            font-size: toRem(21);
+        }
+
+        &:hover {
+            background: rgba($brand-inverse-light, 0.6);
+        }
+    }
+
+    .dropdown {
+        left: toRem(-120);
+    }
+}
+
+// PARTICIPANT TABLE 
+.participant-table {
+    .table-header {
+        @include font-height(10.5, 15);
+        padding: toRem(8) toRem(10);
+        margin-bottom: toRem(2);
+        color: $color-grey-dark;
+        text-transform: uppercase;
+        border-bottom: toRem(1) solid rgba($border-grey, .9);
+
+        @include breakpoint-down(lg) {
+            @include font-height(10.25, 15);
+        }
+
+        @include breakpoint-down(xs) {
+            @include font-height(10, 15);
+        }
+    }
+
+    .table-body,
+    .table-header {
+        width: 100%;
+        @include flex-row-between-nowrap;
+    }
+
+    .table-body {
+        padding: toRem(10) toRem(15);
+        background: $white-text;
+        border-radius: toRem(2);
+        position: relative;
+        cursor: pointer;
+
+        .label {
+            left: 0;
+            top: 0;
+            width: toRem(2);
+            border-radius: toRem(5) 0 0 toRem(5);
+            display: none;
+        }
+
+        &:hover {
+            background: rgba($white-text, 0.8) !important;
+
+            .label {
+                display: unset;
+            }
+        }
+    }
+
+    .exam-table {
+        .column-one {
+            width: 12%;
+
+            @include breakpoint-custom-down(375) {
+                width: 14%;
+            }
+        }
+
+        .column-two {
+            width: 36%;
+
+            @include breakpoint-down(xl) {
+                width: 38%;
+            }
+
+            @include breakpoint-down(sm) {
+                width: 45%;
+            }
+
+            @include breakpoint-down(xs) {
+                width: 53%;
+            }
+
+            @include breakpoint-custom-down(375) {
+                width: 68%;
+            }
+        }
+
+        .column-three {
+            width: 16%;
+
+            @include breakpoint-down(xl) {
+                width: 14%;
+            }
+
+            @include breakpoint-custom-down(375) {
+                display: none;
+            }
+        }
+
+        .column-four {
+            width: 16%;
+
+            @include breakpoint-down(xl) {
+                width: 14%;
+            }
+
+            @include breakpoint-down(xs) {
+                display: none;
+            }
+        }
+
+        .column-five {
+            width: 20%;
+
+            @include breakpoint-down(xl) {
+                width: 22%;
+            }
+
+            @include breakpoint-down(sm) {
+                width: 11%;
+            }
+        }
+    }
+
+    .homework-table {
+        .column-one {
+            width: 12%;
+
+            @include breakpoint-custom-down(375) {
+                width: 14%;
+            }
+        }
+
+        .column-two {
+            width: 60%;
+
+            @include breakpoint-down(xs) {
+                width: 56%;
+            }
+
+            @include breakpoint-custom-down(375) {
+                width: 72%;
+            }
+        }
+
+        .column-three {
+            width: 18%;
+
+            @include breakpoint-custom-down(375) {
+                display: none;
+            }
+        }
+
+        .column-four {
+            width: 22%;
+
+            @include breakpoint-down(xl) {
+                width: 25%;
+            }
+
+            @include breakpoint-down(sm) {
+                width: 11%;
+            }
+        }
+    }
+
+    .counter {
+        @include flex-row-start-nowrap;
+
+        .count {
+            color: $color-ash;
+            font-size: toRem(12.25);
+            margin-right: toRem(25);
+
+            @include breakpoint-down(sm) {
+                font-size: toRem(11.75);
+                margin-right: toRem(20);
+                margin-top: toRem(-2);
+            }
+
+            @include breakpoint-down(xs) {
+                font-size: toRem(11.5);
+                margin-right: toRem(15);
+            }
+        }
+
+        .icon {
+            font-size: toRem(13);
+            color: #e5e5e5;
+
+
+            @include breakpoint-down(xs) {
+                font-size: toRem(12);
+            }
+        }
+    }
+
+    .candidate {
+        @include flex-row-start-nowrap;
+
+        .avatar {
+            margin-right: toRem(12);
+
+            @include breakpoint-down(sm) {
+                margin-right: toRem(10);
+            }
+
+            @include breakpoint-down(xs) {
+                margin-right: toRem(7);
+            }
+        }
+
+        .title-text {
+            @include font-height(12.25, 17);
+            margin-bottom: toRem(2);
+
+            @include breakpoint-down(sm) {
+                @include font-height(12, 16);
+            }
+
+            @include breakpoint-down(xs) {
+                @include font-height(11.5, 16);
+                font-weight: 500 !important;
+            }
+        }
+
+        .meta-text {
+            @include font-height(11.25, 15);
+
+            @include breakpoint-down(sm) {
+                @include font-height(11, 14);
+            }
+
+            @include breakpoint-down(xs) {
+                @include font-height(10.5, 14);
+            }
+        }
+    }
+
+    .text-value {
+        font-size: toRem(12.5);
+
+        @include breakpoint-down(sm) {
+            font-size: toRem(11.75);
+        }
+
+        @include breakpoint-down(xs) {
+            font-size: toRem(11.25);
+        }
+    }
+
+    .action {
+        @include flex-row-start-nowrap;
+
+        @include breakpoint-down(xs) {
+            @include flex-row-end-nowrap;
+        }
+
+        .link {
+            @include font-height(12, 14);
+            margin-right: toRem(20);
+
+            @include breakpoint-down(xl) {
+                @include font-height(11.75, 14);
+                margin-right: toRem(15);
+            }
+
+            @include breakpoint-down(sm) {
+                display: none;
+            }
+        }
+
+        .avatar {
+            background: rgba($border-grey-dark, .15);
+            @include square-shape(30);
+            @include transition(0.4s);
+            overflow: unset;
+
+            .icon {
+                @include center-placement;
+                font-size: toRem(22);
+            }
+
+            &:hover {
+                background: rgba($brand-inverse-light, .75) !important;
+            }
+
+        }
+    }
+}

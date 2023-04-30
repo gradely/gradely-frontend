@@ -1,0 +1,11 @@
+# Base image
+FROM node:16
+
+# Export python to env path
+ENV PYTHON /usr/bin/python
+
+# Set working directory
+WORKDIR /app
+
+# Install vue/cli as a dev dependency
+RUN npm install -D @vue/cli

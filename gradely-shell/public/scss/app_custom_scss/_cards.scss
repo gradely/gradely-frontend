@@ -1,0 +1,195 @@
+.selection-card {
+    border: toRem(1) solid #e5e5e5;
+    @include flex-column-center;
+    background: transparent;
+    padding: toRem(20) toRem(25);
+    margin: toRem(8);
+    width: toRem(265);
+  
+    @include breakpoint-down(md) {
+      margin: toRem(6.5);
+    }
+  
+    @include breakpoint-down(sm) {
+    //   border: 0;
+      @include flex-row-start-nowrap;
+      align-items: flex-start;
+      margin: 0 toRem(5) toRem(10);
+      height: auto;
+      width: 100%;
+      border-radius: toRem(5) !important;
+      padding: toRem(10);
+    }
+  
+    &:hover {
+      background: rgba($color-white, 0.5);
+    }
+  
+    .card-image {
+      @include square-shape(100);
+      margin-bottom: toRem(16);
+      border-radius: toRem(25);
+  
+      @include breakpoint-down(md) {
+        @include square-shape(80);
+        border-radius: toRem(20);
+      }
+  
+      @include breakpoint-down(sm) {
+        margin-bottom: 0;
+        @include square-shape(70);
+        border-radius: toRem(10);
+        margin-right: toRem(15);
+      }
+  
+      @include breakpoint-down(xs) {
+        @include square-shape(57);
+        margin-right: toRem(12);
+      }
+  
+      img {
+        @include background-cover;
+      }
+  
+      .avatar-text {
+        font-size: toRem(22);
+  
+        @include breakpoint-down(xs) {
+          font-size: toRem(15);
+        }
+
+        .icon {
+            font-size: toRem(45);
+
+            @include breakpoint-down(sm) {
+                font-size: toRem(35);
+            }
+        }
+      }
+  
+      .active-marker {
+        background: rgba(29, 29, 29, 0.4) !important;
+  
+        .icon {
+          @include center-placement;
+          font-size: toRem(36);
+          font-weight: 700;
+  
+          @include breakpoint-down(xs) {
+            font-size: toRem(24);
+          }
+        }
+      }
+    }
+  
+    .card-title {
+      @include font-height(14, 19);
+      text-align: center;
+  
+      @include breakpoint-down(md) {
+        @include font-height(13.5, 18);
+      }
+  
+      @include breakpoint-down(sm) {
+        padding-top: toRem(3);
+        @include font-height(14, 19);
+        margin-bottom: toRem(2.5) !important;
+        text-align: left;
+      }
+  
+      @include breakpoint-down(xs) {
+        @include font-height(13.25, 19);
+        margin-bottom: toRem(1) !important;
+      }
+    }
+  
+    .card-meta {
+      @include font-height(12, 15);
+      text-align: center;
+      padding: toRem(5);
+  
+      @include breakpoint-down(sm) {
+        @include font-height(12.5, 15);
+        text-align: left;
+        padding: toRem(5) 0;
+      }
+  
+      @include breakpoint-down(xs) {
+        @include font-height(11.75, 15);
+      }
+    }
+  
+    .bottom-options {
+      @include flex-row-center-nowrap;
+      margin-top: toRem(15);
+      
+      @include breakpoint-down(sm) {
+        @include flex-row-start-nowrap;
+        margin-top: toRem(10);
+      }
+  
+      .option-btn {
+        background: $color-white;
+        @include flex-row-center-nowrap;
+        border-radius: toRem(10);
+        padding: toRem(9.5) toRem(12);
+        cursor: pointer;
+  
+        @include breakpoint-down(xs) {
+          padding: toRem(8.5) toRem(10);
+        }
+  
+        .icon {
+          font-size: toRem(21);
+          color: $brand-accent;
+          margin-right: toRem(7);
+        }
+  
+        .select-icon {
+          border: toRem(2) solid $brand-accent;
+          @include square-shape(19);
+          margin-right: toRem(7);
+  
+          .icon {
+            @include center-placement;
+            font-size: toRem(14);
+            color: $brand-accent;
+            font-weight: 600;
+          }
+        }
+  
+        .text {
+          @include font-height(14, 19);
+          color: $color-grey-dark;
+  
+          @include breakpoint-down(xs) {
+            @include font-height(13, 18);
+          }
+        }
+  
+        &:hover {
+          background: $brand-inverse-light;
+  
+          .icon {
+            color: $brand-inverse;
+          }
+  
+          .select-icon {
+            border: toRem(2) solid $brand-inverse;
+          }
+        }
+      }
+  
+      .active-option-btn {
+        background: $brand-inverse-light !important;
+  
+        .select-icon {
+          border: toRem(2) solid $brand-inverse;
+        }
+  
+        .icon {
+          color: $brand-inverse !important;
+        }
+      }
+    }
+  }

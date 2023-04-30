@@ -1,0 +1,151 @@
+.feedback-modal {
+    .title-text {
+        @include font-height(12.75, 18);
+        margin-bottom: toRem(15);
+        color: $color-text;
+    }
+
+    .check-item {
+        @include flex-row-start-nowrap;
+        margin-bottom: toRem(22);
+        width: max-content;
+        cursor: pointer;
+
+        input {
+            margin-right: toRem(6);
+        }
+
+        .text {
+            font-size: toRem(12.25);
+            color: $color-text;
+        }
+
+        &:last-of-type {
+            margin-bottom: toRem(27);
+        }
+    }
+
+    .form-area {
+
+        .form-title {
+            @include font-height(12.25, 18);
+            margin-bottom: toRem(7);
+        }
+
+        .form-control {
+            @include font-height(12.5, 18);
+        }
+    }
+}
+
+.central-placement {
+    margin-top: toRem(40);
+    @include flex-column-start-center;
+
+    .top-row {
+        @include square-shape(90);
+
+        @include breakpoint-down(sm) {
+            @include square-shape(80);
+        }
+    }
+
+    .title-text {
+        @include font-height(15, 19);
+
+        @include breakpoint-down(xs) {
+            @include font-height(13.5, 18);
+        }
+    }
+
+    .info-text {
+        @include font-height(12.75, 24);
+        width: 95%;
+
+        @include breakpoint-down(xs) {
+            width: 85%;
+        }
+    }
+
+    .btn {
+        font-size: toRem(10);
+    }
+}
+
+.c-btn {
+    padding: toRem(11) toRem(30);
+    @include transition(0.3s);
+    border-radius: toRem(25);
+    font-size: toRem(11.25);
+}
+
+.btn-tonic {
+    background: $brand-red-light;
+    color: $brand-tonic;
+    font-weight: 600;
+
+    &:hover {
+        box-shadow: 0 toRem(1) toRem(4) rgba($brand-black, 0.15);
+    }
+}
+
+.btn-text {
+    &:hover {
+        color: $brand-inverse !important;
+    }
+}
+
+.modal-btn {
+    padding: toRem(12) toRem(34);
+    font-size: toRem(10.75);
+}
+
+.form-column {
+    margin-bottom: toRem(20);
+
+    @include breakpoint-down(sm) {
+        margin-bottom: toRem(15);
+    }
+
+    &:last-of-type {
+        margin-bottom: toRem(10);
+    }
+
+    .control-label {
+        @include font-height(12, 19);
+        font-weight: 500;
+        color: $color-ash;
+        text-transform: uppercase;
+
+        @include breakpoint-down(sm) {
+            font-size: toRem(11.25) !important;
+            line-height: toRem(15) !important;
+        }
+
+        @include breakpoint-down(xs) {
+            font-size: toRem(11) !important;
+
+        }
+    }
+
+    .form-control {
+        @include font-height(12.75, 18);
+    }
+}
+
+.modal-search-bar {
+    position: relative;
+    top: toRem(14);
+
+    .form-control {
+        padding-left: toRem(40);
+        @include font-height(12.75, 18);
+    }
+
+    .icon-search {
+        @include center-y;
+        left: toRem(20);
+        font-size: toRem(15);
+        margin-top: toRem(1);
+    }
+}
