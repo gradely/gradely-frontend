@@ -1,0 +1,74 @@
+version: '3.9' 
+services:  
+  gradely-store:
+    container_name: store-app
+    build: 
+      context: ./gradely-store
+      dockerfile: Dockerfile
+    ports:
+      - 8090:8080
+    volumes: 
+      - ./gradely-store:/app
+      - '/app/node_modules'
+    command: npm run serve
+  
+  gradely-shell:
+    container_name: shell-app
+    build: 
+      context: ./gradely-shell
+      dockerfile: Dockerfile
+    ports:
+      - 8091:8080
+    volumes: 
+      - ./gradely-shell:/app
+      - '/app/node_modules'
+    command: npm run serve
+  
+  gradely-auth:
+    container_name: auth-app
+    build: 
+      context: ./gradely-auth
+      dockerfile: Dockerfile
+    ports:
+      - 8092:8080
+    volumes: 
+      - ./gradely-auth:/app
+      - '/app/node_modules'
+    command: npm run serve
+  
+  gradely-lms:
+    container_name: lms-app
+    build: 
+      context: ./gradely-lms
+      dockerfile: Dockerfile
+    ports:
+      - 8093:8080
+    volumes: 
+      - ./gradely-lms:/app
+      - '/app/node_modules'
+    command: npm run serve
+  
+  gradely-assessment:
+    container_name: assessment-app
+    build: 
+      context: ./gradely-assessment
+      dockerfile: Dockerfile
+    ports:
+      - 8094:8080
+    volumes: 
+      - ./gradely-assessment:/app
+      - '/app/node_modules'
+    command: npm run serve
+  
+  gradely-lesson:
+    container_name: lesson-app
+    build: 
+      context: ./gradely-lesson
+      dockerfile: Dockerfile
+    ports:
+      - 8095:8080
+    volumes: 
+      - ./gradely-lesson:/app
+      - '/app/node_modules'
+    command: npm run serve
+   

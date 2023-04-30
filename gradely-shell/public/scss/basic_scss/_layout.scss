@@ -1,0 +1,31 @@
+.gradely-app-container {
+    position: relative;
+    top: toRem(130);
+    height: auto;
+    margin-bottom: toRem(160) !important;
+
+    @include breakpoint-down(sm) {
+        top: toRem(110);
+        margin-bottom: toRem(180) !important;
+    }
+}
+
+.gradely-container {
+    margin: 0 auto;
+
+    @include breakpoint-up(sm) {
+        max-width: toRem(680);
+    }
+
+    @include breakpoint-up(md) {
+        max-width: toRem(980);
+    }
+
+    @include breakpoint-up(lg) {
+        max-width: toRem(1000);
+    }
+
+    @include breakpoint-up(xl) {
+        max-width: toRem(1110);
+    }
+}

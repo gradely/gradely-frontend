@@ -1,0 +1,301 @@
+// POST OPTION CARD 
+.post-options {
+    @include flex-row-start-nowrap;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    .post-option {
+        @include flex-row-center-nowrap;
+        padding: toRem(9) toRem(20);
+        @include transition(0.4s);
+        border-radius: toRem(30);
+        background: $color-white;
+        margin-right: toRem(11);
+        width: max-content;
+        cursor: pointer;
+        white-space: nowrap;
+
+        @include breakpoint-down(lg) {
+            margin-right: toRem(10);
+            padding: toRem(7) toRem(14);
+        }
+
+        @include breakpoint-down(sm) {
+            padding: toRem(8) toRem(14);
+            margin-right: toRem(10);
+        }
+
+        &:hover {
+            background: $brand-accent-light;
+        }
+
+        .icon {
+            font-size: toRem(16);
+            margin-right: toRem(7);
+            margin-top: toRem(-1);
+
+
+            @include breakpoint-down(lg) {
+                margin-top: toRem(-0.5);
+                font-size: toRem(15.75);
+                margin-right: toRem(8);
+            }
+        }
+
+        .option-text {
+            font-size: toRem(12);
+            color: $color-text;
+
+            @include breakpoint-down(xs) {
+                font-size: toRem(12.25);
+            }
+
+            @include breakpoint-custom-down(340) {
+                font-size: toRem(11.5);
+            }
+        }
+    }
+
+    .active-option {
+        background: $brand-accent-light;
+    }
+}
+
+// POST INPUT STATE 
+.post-input-state {
+    .post-top {
+        border-radius: toRem(10) toRem(10) 0 0;
+        padding: toRem(15);
+
+        @include breakpoint-down(lg) {
+            padding: toRem(14);
+        }
+
+        @include breakpoint-down(md) {
+            padding: toRem(12);
+        }
+
+        @include breakpoint-down(xs) {
+            border-radius: toRem(5) toRem(5) 0 0;
+            padding: toRem(10) toRem(8.5);
+        }
+
+        .post-title-text {
+            @include font-height(12, 17);
+            margin-bottom: toRem(15);
+            color: $color-text;
+            font-weight: 600;
+        }
+
+        .post-top-row {
+            @include flex-row-start-nowrap;
+            align-items: flex-start;
+
+            .avatar {
+                @include square-shape(34);
+                border-radius: toRem(8);
+                margin-right: toRem(10);
+
+                @include breakpoint-down(xs) {
+                    display: none;
+                }
+
+                .avatar-text {
+                    font-size: toRem(11.75);
+                    font-weight: 500 !important;
+                }
+            }
+        }
+
+        .post-attachment-preview {
+            @include flex-row-start-wrap;
+            margin-top: toRem(18);
+        }
+
+        .post-input-field {
+            @include flex-row-start-nowrap;
+            margin-top: toRem(12);
+            margin-bottom: toRem(20);
+            align-items: flex-start;
+
+            &:last-of-type {
+                margin-bottom: toRem(12);
+            }
+
+            .icon {
+                color: $brand-inverse;
+                font-size: toRem(18);
+                margin-right: toRem(15);
+
+                @include breakpoint-down(xs) {
+                    margin-right: toRem(10);
+                }
+            }
+
+            .input-box {
+                position: relative;
+                width: 100%;
+
+                .input-title {
+                    color: $color-grey-dark;
+                    @include font-height(13, 19);
+                    margin-right: toRem(5);
+
+                    @include breakpoint-down(xs) {
+                        @include font-height(12.45, 18);
+                    }
+                }
+
+                .input-entry {
+                    color: $color-ash;
+                    @include font-height(12.75, 19);
+
+                    @include breakpoint-down(xs) {
+                        @include font-height(12.45, 18);
+                    }
+                }
+
+                .form-input {
+                    .form-data-row {
+                        @include flex-row-between-wrap;
+                        margin-top: toRem(16);
+
+                        .period-input {
+                            position: relative;
+                            width: 48%;
+
+                            @include breakpoint-down(xs) {
+                                width: 100%;
+
+                                &:last-of-type {
+                                    margin-top: toRem(15);
+                                }
+                            }
+
+                            .form-control {
+                                @include font-height(12, 17);
+                            }
+
+                            .label-text {
+                                @include font-height(12.25, 17);
+                                padding: 0 toRem(5);
+                                background: $white-text;
+                                position: absolute;
+                                color: $color-ash;
+                                left: toRem(14);
+                                top: -17%;
+                                z-index: 9;
+
+                                @include breakpoint-down(xs) {
+                                    @include font-height(12, 17);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .select-input {
+                    @include flex-row-between-nowrap;
+                    align-items: flex-start;
+                    padding-bottom: toRem(10);
+                    border-bottom: toRem(1) solid #bff4f8;
+                    cursor: pointer;
+
+                    .icon {
+                        @include transition(0.4s);
+                        color: $border-grey-dark;
+                        margin-right: toRem(2);
+                        font-size: toRem(13);
+                        margin-top: toRem(5);
+
+                        @include breakpoint-down(xs) {
+                            font-size: toRem(12);
+                        }
+                    }
+
+                    &:hover {
+                        border-bottom: toRem(1) solid $brand-accent-light;
+                    }
+                }
+
+                .single-line {
+                    @include flex-row-start-wrap;
+                }
+            }
+        }
+    }
+
+    .post-bottom {
+        border-radius: 0 0 toRem(10) toRem(10);
+        @include flex-row-between-nowrap;
+        padding: toRem(9) toRem(15);
+        background: $color-white;
+
+        @include breakpoint-down(lg) {
+            padding: toRem(9) toRem(14);
+        }
+
+        @include breakpoint-down(md) {
+            padding: toRem(8) toRem(12);
+        }
+
+        @include breakpoint-down(xs) {
+            border-radius: 0 0 toRem(5) toRem(5);
+            padding: toRem(7) toRem(7.5);
+        }
+
+        .left-column {
+            @include flex-row-start-nowrap;
+            color: $color-grey-dark;
+
+            .icon {
+                margin-right: toRem(8);
+                font-size: toRem(17.75);
+                margin-top: toRem(-1.5);
+            }
+
+            .text {
+                font-size: toRem(12.85);
+            }
+
+            &:hover {
+                color: darken($brand-accent, 6%);
+            }
+        }
+
+        .right-column {
+            @include flex-row-end-nowrap;
+
+            .icon {
+                @include transition(0.4s);
+                color: $color-grey-dark;
+                font-size: toRem(21);
+                cursor: pointer;
+
+                @include breakpoint-down(xs) {
+                    font-size: toRem(19);
+                }
+
+                &:hover {
+                    color: $brand-tonic;
+                }
+            }
+
+            .line {
+                width: toRem(1);
+                height: toRem(30);
+                background: $border-grey;
+                margin: 0 toRem(10);
+            }
+
+            .btn {
+                font-size: toRem(11);
+                padding: toRem(11) toRem(25);
+                font-weight: 500 !important;
+            }
+        }
+    }
+}

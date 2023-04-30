@@ -1,0 +1,245 @@
+// Application color pallette //
+$brand-primary: #2a4f77;
+$brand-primary-light: rgba($brand-primary, 0.25);
+$brand-accent: #faa017;
+$brand-accent-light: #fceacf;
+$brand-inverse: #11bdcf;
+$brand-inverse-light: #dbf5f8;
+$brand-black: #07374b;
+$brand-green: #00c78b;
+$brand-green-light: #ccfced;
+$brand-red: #fe747d;
+$brand-red-light: #ffdcde;
+$color-text: #353535;
+$color-white: #f5f5f5;
+$color-grey-dark: #757575;
+$color-grey-light: #c5c5c5;
+$border-grey: #d5d5d5;
+$border-grey-light: #f1f1f1;
+$border-grey-dark: #959595;
+$brand-navy: #113255;
+$brand-tonic: #f6515b;
+$color-mid-blue: #004680;
+$color-deep-blue: #033966;
+$color-ash: #555555;
+$color-ash-lighter: #a8a8a8;
+$off-white: #ebebeb;
+$white-text: #ffffff;
+$black-text: #000000;
+$brand-white: #f4f4f4;
+$pale-orange: #fceacf;
+$soft-black: #161616;
+$brand-blue: #0980ee;
+$grey-light: #f0f0f0;
+// $pale-orange: #3873b3;
+
+// App Color Pallete
+$app-color: () !default;
+$app-color: map-merge(
+  (
+    "brand-primary": $brand-primary,
+    "brand-primary-light": $brand-primary-light,
+    "brand-accent": $brand-accent,
+    "brand-accent-light": $brand-accent-light,
+    "brand-inverse": $brand-inverse,
+    "brand-inverse-light": $brand-inverse-light,
+    "brand-black": $brand-black,
+    "brand-green": $brand-green,
+    "brand-green-light": $brand-green-light,
+    "brand-red": $brand-red,
+    "brand-red-light": $brand-red-light,
+    "color-text": $color-text,
+    "color-white": $color-white,
+    "color-grey-dark": $color-grey-dark,
+    "color-grey-light": $color-grey-light,
+    "border-grey": $border-grey,
+    "border-grey-light": $border-grey-light,
+    "border-grey-dark": $border-grey-dark,
+    "brand-navy": $brand-navy,
+    "brand-tonic": $brand-tonic,
+    "color-deep-blue": $color-deep-blue,
+    "color-mid-blue": $color-mid-blue,
+    "color-ash": $color-ash,
+    "off-white": $off-white,
+    "white-text": $white-text,
+    "black-text": $black-text,
+    "color-ash-lighter": $color-ash-lighter,
+    "brand-white": $brand-white,
+    "pale-orange": $pale-orange,
+    "soft-black": $soft-black,
+    "brand-blue": $brand-blue,
+    "grey-light": $grey-light,
+  ),
+  $app-color
+);
+
+/*------------------------------------*\
+	App Color Palette
+\*------------------------------------*/
+@each $color-name, $color in $app-color {
+  .#{$color-name} {
+    color: $color !important;
+  }
+
+  .#{$color-name}-bg {
+    background-color: $color !important;
+  }
+
+  .border-#{$color-name} {
+    border: 1px solid $color !important;
+  }
+
+  .border-top-#{$color-name} {
+    border-top: 1px solid $color !important;
+  }
+
+  .border-bottom-#{$color-name} {
+    border-bottom: 1px solid $color !important;
+  }
+}
+
+/*------------------------------------*\
+	Avatar Profiling Color Palette
+\*------------------------------------*/
+$chestnut: rgb(184, 129, 53);
+$pampers: rgb(0, 169, 164);
+$cherry-tomato: rgb(233, 75, 60);
+$aspen-gold: rgb(218, 174, 55);
+$verdant-green: rgb(32, 143, 34);
+$orange-shire: rgb(249, 87, 0);
+$fuschia: rgb(46, 204, 99);
+$toffee: rgb(117, 81, 57);
+$pale-yellow: rgb(255, 174, 0);
+$black-cloud: rgb(14, 29, 44);
+$navy-blue: rgb(37, 50, 79);
+$forest-green: rgb(41, 114, 42);
+$deep-blue: rgb(1, 59, 131);
+$bright-red: rgb(233, 68, 8);
+$crimson: rgb(172, 80, 103);
+$royal-blue: rgb(41, 0, 189);
+$light-green: rgb(3, 201, 85);
+$royal-purple: rgb(164, 3, 186);
+$scarlet: rgb(213, 14, 123);
+$kelly-green: rgb(51, 158, 102);
+$miami: rgb(220, 124, 40);
+$deep-purple: rgb(51, 13, 72);
+$windsor-wine: rgb(100, 62, 70);
+$sprout: rgb(57, 65, 65);
+$slack: rgb(74, 21, 75);
+$fedex: rgb(37, 12, 119);
+
+$profile-color: () !default;
+$profile-color: map-merge(
+  (
+    "chestnut": $chestnut,
+    "pampers": $pampers,
+    "cherry-tomato": $cherry-tomato,
+    "aspen-gold": $aspen-gold,
+    "verdant-green": $verdant-green,
+    "orange-shire": $orange-shire,
+    "fuschia": $fuschia,
+    "toffee": $toffee,
+    "pale-yellow": $pale-yellow,
+    "black-cloud": $black-cloud,
+    "navy-blue": $navy-blue,
+    "forest-green": $forest-green,
+    "deep-blue": $deep-blue,
+    "bright-red": $bright-red,
+    "crimson": $crimson,
+    "royal-blue": $royal-blue,
+    "scarlet": $scarlet,
+    "kelly-green": $kelly-green,
+    "miami": $miami,
+    "deep-purple": $deep-purple,
+    "windsor-wine": $windsor-wine,
+    "sprout": $sprout,
+    "slack": $slack,
+    "fedex": $fedex,
+  ),
+  $profile-color
+);
+
+@each $color-name, $color in $profile-color {
+  .#{$color-name} {
+    color: $color !important;
+  }
+
+  .#{$color-name}-bg {
+    background-color: $color !important;
+  }
+
+  .border-#{$color-name} {
+    border: 1px solid $color !important;
+  }
+}
+
+/*------------------------------------*\
+	Social Brand Color Palette
+\*------------------------------------*/
+$facebook-color: hsla(222, 47%, 40%, 1); // #365397
+$twitter-color: hsla(198, 100%, 47%, 1); // #00a9f1
+$linkedin-color: hsla(203, 100%, 35%, 1); // #006db3
+$apple-color: hsla(0, 0%, 45%, 1); // #737373
+$google-color: hsla(217, 89%, 61%, 1); // #4285f4
+$google-plus-color: hsla(8, 74%, 53%, 1); // #e0452c
+$youtube-color: hsla(0, 100%, 60%, 1); // #ff3333
+$vimeo-color: hsla(200, 82%, 61%, 1); // #48b6ed
+$pinterest-color: hsla(0, 78%, 45%, 1); // #ce1a19
+$yelp-color: hsla(5, 100%, 38%, 1); // #c30f00
+$dribbble-color: hsla(338, 82%, 60%, 1); // #ed4584
+$amazon-color: hsla(36, 100%, 50%, 1); // #ff9700
+$ebay-color: hsla(219, 89%, 30%, 1); // #083790
+$skype-color: hsla(198, 100%, 48%, 1); // #00acf4
+$instagram-color: hsla(208, 46%, 41%, 1); // #396d9a
+$dropbox-color: hsla(206, 89%, 46%, 1); // #0d84de
+$flickr-color: hsla(334, 100%, 46%, 1); // #ea0066
+$github-color: hsla(0, 0%, 18%, 1); // #2f2f2f
+$basecamp-color: hsla(121, 38%, 58%, 1); // #6bbd6d
+$tumblr-color: hsla(210, 37%, 30%, 1); // #304c68
+$foursquare-color: hsla(206, 72%, 45%, 1); // #207dc5
+$box-color: hsla(204, 83%, 40%, 1); // #1277bc
+$whatsapp-color: hsl(142, 70%, 49%);
+
+$social-color: () !default;
+$social-color: map-merge(
+  (
+    "facebook": $facebook-color,
+    "twitter": $twitter-color,
+    "linkedin": $linkedin-color,
+    "apple": $apple-color,
+    "google": $google-color,
+    "google-plus": $google-plus-color,
+    "youtube": $youtube-color,
+    "vimeo": $vimeo-color,
+    "pinterest": $pinterest-color,
+    "yelp": $yelp-color,
+    "dribble": $dribbble-color,
+    "amazon": $amazon-color,
+    "ebay": $ebay-color,
+    "skype": $skype-color,
+    "instagram": $instagram-color,
+    "dropbox": $dropbox-color,
+    "flickr": $flickr-color,
+    "github": $github-color,
+    "basecamp": $basecamp-color,
+    "tumblr": $tumblr-color,
+    "foursquare": $foursquare-color,
+    "box": $box-color,
+    "whatsapp": $whatsapp-color,
+  ),
+  $social-color
+);
+
+@each $color-name, $color in $social-color {
+  .#{$color-name} {
+    color: $color !important;
+  }
+
+  .#{$color-name}-bg {
+    background-color: $color !important;
+  }
+
+  .border-#{$color-name} {
+    border: 1px solid $color !important;
+  }
+}

@@ -1,0 +1,198 @@
+// PLACEHOLDER
+%avatar-text-styling {
+  width: 100%;
+  height: 100%;
+  background-color: $brand-primary;
+  color: inherit;
+  border-radius: inherit;
+  line-height: 1em;
+  text-align: center;
+  position: relative;
+  letter-spacing: 0.05em;
+}
+
+.avatar {
+  @include square-shape(32);
+  overflow: hidden;
+  flex: 0 0 auto;
+  position: relative;
+  border-radius: 50%;
+  color: $white-text;
+  vertical-align: middle;
+  border-style: none;
+  font-size: toRem(13);
+  box-sizing: border-box;
+
+  &-square {
+    border-radius: toRem(7);
+  }
+
+  .avatar-img {
+    @include center-placement;
+    width: 100%;
+    margin: auto;
+    z-index: 1;
+    border-radius: inherit;
+  }
+
+  @include breakpoint-down(sm) {
+    @include square-shape(30);
+  }
+}
+
+.avatar-avg {
+  @include square-shape(32);
+  font-size: toRem(11);
+
+  @include breakpoint-down(sm) {
+    @include square-shape(24);
+  }
+}
+
+.avatar-xs {
+  @include square-shape(20);
+  font-size: toRem(9);
+}
+
+.avatar-sm {
+  @include square-shape(24);
+  font-size: toRem(11);
+}
+
+.avatar-sm-md {
+  @include square-shape(42);
+
+  @include breakpoint-down(xl) {
+    @include square-shape(38);
+  }
+
+  @include breakpoint-down(lg) {
+    @include square-shape(36);
+  }
+
+  @include breakpoint-down(sm) {
+    @include square-shape(33);
+  }
+}
+
+.avatar-md {
+  @include square-shape(48);
+
+  @include breakpoint-down(lg) {
+    @include square-shape(43);
+  }
+
+  @include breakpoint-down(md) {
+    @include square-shape(38);
+  }
+
+  @include breakpoint-down(sm) {
+    @include square-shape(34);
+  }
+}
+
+.avatar-lg {
+  @include square-shape(64);
+
+  @include breakpoint-down(md) {
+    @include square-shape(58);
+  }
+
+  @include breakpoint-down(sm) {
+    @include square-shape(48);
+  }
+}
+
+.avatar-xl {
+  @include square-shape(96);
+  @include font-height(48, 65);
+
+  @include breakpoint-down(md) {
+    @include square-shape(68);
+    @include font-height(34, 50);
+  }
+
+  @include breakpoint-down(sm) {
+    @include square-shape(52);
+    @include font-height(28, 34);
+  }
+}
+
+.avatar-xxl {
+  @include square-shape(128);
+  font-size: toRem(64);
+
+  @include breakpoint-down(lg) {
+    @include square-shape(100);
+    font-size: toRem(48);
+  }
+
+  @include breakpoint-down(md) {
+    @include square-shape(110);
+  }
+
+  @include breakpoint-down(xs) {
+    @include square-shape(100);
+  }
+}
+
+.avatar-big {
+  @include square-shape(200);
+  font-size: toRem(100);
+
+  @include breakpoint-down(lg) {
+    @include square-shape(155);
+    font-size: toRem(80);
+  }
+}
+
+.avatar-massive {
+  @include square-shape(256);
+  font-size: toRem(120);
+
+  @include breakpoint-down(lg) {
+    @include square-shape(240);
+    font-size: toRem(100);
+  }
+
+  @include breakpoint-down(md) {
+    @include square-shape(128);
+    font-size: toRem(64);
+  }
+}
+
+.avatar-text {
+  @extend %avatar-text-styling;
+  @include flex-row-center-nowrap;
+  text-transform: uppercase;
+  font-size: 1em;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.avatar-with-meta {
+  @extend %avatar-text-styling;
+  @include flex-column-center;
+  background: $brand-inverse-light;
+
+  .avatar-title {
+    text-transform: uppercase;
+    font-weight: 600;
+    @include font-height(16, 19);
+    color: $brand-navy;
+
+    @include breakpoint-down(sm) {
+      font-size: toRem(14);
+    }
+  }
+
+  .avatar-meta {
+    font-size: toRem(12);
+    font-weight: normal;
+    color: $color-ash;
+
+    @include breakpoint-down(sm) {
+      font-size: toRem(11);
+    }
+  }
+}

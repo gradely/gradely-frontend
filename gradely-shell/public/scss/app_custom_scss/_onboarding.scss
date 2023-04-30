@@ -1,0 +1,151 @@
+.onboarding-image-top {
+    @include flex-row-center-nowrap;
+    margin-bottom: toRem(10);
+    position: relative;
+    top: toRem(-15);
+}
+
+.onboarding-title-text {
+    @include font-height(21, 28);
+
+    @include breakpoint-down(lg) {
+        @include font-height(20, 26);
+    }
+
+    @include breakpoint-down(xs) {
+        @include font-height(17.75, 25);
+    }
+
+    @include breakpoint-custom-down(360) {
+        @include font-height(17, 24);
+    }
+}
+
+.onboarding-description {
+    @include font-height(13, 25);
+    margin-bottom: toRem(30);
+    letter-spacing: 0.025em;
+    width: 80%;
+
+    @include breakpoint-down(lg) {
+        @include font-height(12.75, 24);
+        width: 90%;
+    }
+
+    @include breakpoint-down(xs) {
+        @include font-height(12, 22);
+        width: 97%;
+    }
+
+    @include breakpoint-custom-down(360) {
+        @include font-height(11.75, 22);
+        width: 100%;
+    }
+}
+
+.onboarding-form-wrapper {
+    @include flex-column-center;
+    justify-content: flex-start;
+    width: 75%;
+
+    @include breakpoint-down(lg) {
+        width: 85%;
+    }
+
+    @include breakpoint-down(xs) {
+        width: 90%;
+    }
+
+    @include breakpoint-custom-down(360) {
+        width: 100%;
+    }
+
+    .btn {
+        width: 80%;
+        font-size: toRem(10.75);
+        padding: toRem(14.5) toRem(28);
+
+        @include breakpoint-down(lg) {
+            padding: toRem(14) toRem(28);
+        }
+    }
+
+    .input-group {
+        position: relative;
+
+        .area-code {
+            @include center-y;
+            left: toRem(10);
+            z-index: 99;
+
+            .avatar {
+                @include square-shape(17);
+                margin-right: toRem(6);
+            }
+
+            .code {
+                @include font-height(12, 16);
+                margin-top: toRem(1);
+                color: $color-ash;
+            }
+        }
+
+        .addon {
+            @include center-y;
+            right: toRem(10);
+            z-index: 99;
+            font-size: toRem(19);
+            cursor: pointer;
+
+            @include breakpoint-down(lg) {
+                font-size: toRem(16);
+            }
+        }
+    }
+}
+
+.onboarding-setup {
+    .onboarding-text {
+        @include font-height(23, 38);
+        margin-bottom: toRem(8);
+        
+        @include breakpoint-down(xs) {
+            @include font-height(20, 32);
+        }
+    }
+    
+    .meta-text {
+        @include font-height(16.5, 30);
+        margin-top: toRem(3);
+        margin-bottom: toRem(14);
+        width: 70%;
+        
+        @include breakpoint-down(sm) {
+            @include font-height(15, 22);
+        }
+        
+        @include breakpoint-down(xs) {
+            @include font-height(14.5, 19);
+            width: 80%;
+        }
+    }
+
+    
+  .info-link {
+    @include font-height(12.5, 18);
+    margin-top: toRem(12);
+    color: $color-ash;
+
+    @include breakpoint-down(xs) {
+        @include font-height(12.75, 21);
+    }
+
+    a {
+      color: $brand-accent;
+
+      &:hover {
+        color: $brand-inverse;
+      }
+    }
+  }
+}

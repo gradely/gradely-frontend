@@ -1,0 +1,1265 @@
+// CUSTOM COLORS 
+$darkish-doc-blue: #285290;
+$darkish-excel-green: #2D7930;
+$darkish-ppt-red: #CC4525;
+$darkish-pdf-red: #F70000;
+$darkish-txt-grey: #546A7A;
+
+$light-doc-blue: #dfeafa;
+$light-excel-green: #def8de;
+$light-ppt-red: #f8e2de;
+$light-pdf-red: #f7e6e6;
+$light-txt-grey: #dfedf7;
+
+$custom-color: () !default;
+$custom-color: map-merge(("darkish-doc-blue": $darkish-doc-blue,
+        "darkish-excel-green": $darkish-excel-green,
+        "darkish-ppt-red": $darkish-ppt-red,
+        "darkish-pdf-red": $darkish-pdf-red,
+        "darkish-txt-grey": $darkish-txt-grey,
+        "light-doc-blue": $light-doc-blue,
+        "light-excel-green": $light-excel-green,
+        "light-ppt-red": $light-ppt-red,
+        "light-pdf-red": $light-pdf-red,
+        "light-txt-grey": $light-txt-grey,
+    ),
+    $custom-color);
+
+@each $color-name,
+$color in $custom-color {
+    .#{$color-name} {
+        color: $color !important;
+    }
+
+    .#{$color-name}-bg {
+        background-color: $color !important;
+    }
+}
+
+// PROGRESS STYLE 
+// #nprogress {
+//     .bar {
+//         background: $brand-inverse;
+//     }
+// }
+
+// DROPDOWN 
+.dropdown {
+    position: absolute;
+    right: toRem(12);
+    top: toRem(45);
+    border-radius: toRem(5);
+    background: $white-text;
+    z-index: 9;
+    padding: toRem(10);
+    box-shadow: 0 toRem(1) toRem(4) rgba(0, 0, 0, 0.15);
+
+    .item {
+        @include transition(0.4s);
+        @include font-height(11, 16);
+        border-radius: toRem(3);
+        padding: toRem(6) toRem(8);
+        cursor: pointer;
+        color: $color-ash;
+
+        @include breakpoint-down(lg) {
+            padding: toRem(5) toRem(8);
+        }
+
+        @include breakpoint-down(xs) {
+            @include font-height(10.75, 16);
+        }
+
+        &:hover {
+            background: $brand-inverse-light;
+        }
+    }
+}
+
+// EXTENSIBLE TEXT AREA 
+.extended-textarea[contenteditable] {
+    &:empty {
+        &::before {
+            content: "Enter post content here...";
+            color: $border-grey-dark;
+        }
+    }
+}
+
+.extended-textarea {
+    @include font-height(12.5, 21);
+    margin-bottom: toRem(8);
+    color: $brand-black;
+    width: 100%;
+    cursor: text;
+    min-height: toRem(55);
+    height: auto;
+    border: none;
+    outline: none;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+
+    @include breakpoint-down(xl) {
+        @include font-height(13, 19);
+    }
+
+    @include breakpoint-down(sm) {
+        @include font-height(12.25, 18);
+    }
+
+    @include breakpoint-down(xs) {
+        @include font-height(12, 18);
+    }
+
+    @include breakpoint-custom-down(360) {
+        @include font-height(12, 17);
+    }
+
+    a {
+        color: $brand_inverse !important;
+    }
+}
+
+// POST INPUT ENTRY 
+.post-input-entry-block {
+    border: toRem(1) solid #e5e5e5;
+    padding: toRem(18) toRem(16);
+    border-radius: toRem(10);
+    margin-top: toRem(5);
+
+    @include breakpoint-down(xl) {
+        padding: toRem(15) toRem(16);
+    }
+
+    @include breakpoint-down(lg) {
+        padding: toRem(12);
+    }
+
+    .top {
+        .title-row {
+            @include flex-row-between-nowrap;
+            margin-bottom: toRem(15);
+
+            @include breakpoint-down(xl) {
+                margin-bottom: toRem(10);
+            }
+
+            .title-text {
+                @include font-height(13.25, 21);
+                font-weight: 700;
+
+                @include breakpoint-down(xl) {
+                    font-weight: 600;
+                }
+
+                @include breakpoint-down(lg) {
+                    @include font-height(13, 18);
+                }
+
+                @include breakpoint-down(sm) {
+                    @include font-height(12.25, 17);
+                }
+            }
+
+            .cancel-text {
+                @include font-height(12, 16);
+                @include transition(0.4s);
+                cursor: pointer;
+
+                @include breakpoint-down(xl) {
+                    @include font-height(11.5, 15);
+                }
+
+                @include breakpoint-down(lg) {
+                    @include font-height(11, 14);
+                }
+
+                &:hover {
+                    color: $brand-red !important;
+                }
+            }
+        }
+
+        .title-input {
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            font-size: toRem(13);
+
+            @include breakpoint-down(xl) {
+                &::placeholder {
+                    font-size: toRem(13);
+                }
+            }
+
+            @include breakpoint-down(lg) {
+                font-size: toRem(12.25);
+
+                &::placeholder {
+                    font-size: toRem(12.25);
+                }
+            }
+        }
+    }
+
+    .middle {
+        .assessment-categories {
+            margin: toRem(20) 0;
+            @include flex-row-start-nowrap;
+
+            @include breakpoint-down(xl) {
+                margin: toRem(15) 0;
+            }
+
+            .category {
+                @include font-height(11.25, 16);
+                transition: background 0.4s ease-in;
+                border-radius: toRem(35);
+                color: $color-grey-dark;
+                padding: toRem(7.5) toRem(15.5);
+                font-weight: 700;
+                margin-right: toRem(10);
+                cursor: pointer;
+
+                @include breakpoint-down(xl) {
+                    @include font-height(11.25, 16);
+                    padding: toRem(7.5) toRem(14);
+                    font-weight: 600;
+                    margin-right: toRem(10);
+                }
+
+                @include breakpoint-down(lg) {
+                    @include font-height(11, 15);
+                    padding: toRem(6) toRem(14);
+                }
+
+                &:hover {
+                    background: $brand-accent-light;
+                    color: $brand-navy;
+                    border: toRem(1) solid $brand-accent;
+                }
+            }
+
+            .active {
+                background: $brand-accent-light;
+                color: $brand-navy;
+                border: toRem(1) solid $brand-accent;
+            }
+        }
+    }
+
+    .bottom {
+        .form-control {
+            @include font-height(12.5, 16);
+            padding: toRem(8) toRem(16);
+            background: #F5F5F5;
+            border: none;
+            outline: 0;
+
+            @include breakpoint-down(xl) {
+                @include font-height(12, 16);
+                padding: toRem(5) toRem(14);
+            }
+
+            @include breakpoint-down(lg) {
+                @include font-height(11.5, 14);
+                padding: toRem(2) toRem(10);
+            }
+
+            @include breakpoint-down(sm) {
+                @include font-height(11.5, 14);
+                padding: toRem(4) toRem(15);
+            }
+
+            &:focus {
+                border: none;
+                outline: 0;
+            }
+        }
+    }
+}
+
+// WEEKLY TITLE ROW
+.weekly-title-row {
+    @include flex-row-between-nowrap;
+    margin-bottom: toRem(30);
+
+    .text {
+        font-weight: 700;
+        color: $color-text;
+        @include font-height(18.5, 24);
+
+        @include breakpoint-down(md) {
+            @include font-height(16, 22);
+        }
+
+        @include breakpoint-down(sm) {
+            @include font-height(15.5, 20);
+        }
+
+        @include breakpoint-down(xs) {
+            @include font-height(15, 18);
+        }
+    }
+
+    .btn {
+        @include flex-row-center-nowrap;
+        padding: toRem(8) toRem(14) toRem(8) toRem(18);
+
+        @include breakpoint-down(md) {
+            padding: toRem(5) toRem(14) toRem(5) toRem(18);
+        }
+
+        @include breakpoint-down(xs) {
+            padding: toRem(4) toRem(12) toRem(4) toRem(16);
+        }
+
+        .text {
+            @include transition(0.6s);
+            font-size: toRem(12);
+            text-transform: capitalize;
+
+            @include breakpoint-down(md) {
+                font-size: toRem(11);
+            }
+        }
+
+        .avatar {
+            @include square-shape(25);
+
+            .icon {
+                @include transition(0.6s);
+                @include center-placement;
+                color: $color-ash;
+                font-size: toRem(14);
+            }
+        }
+
+        &:hover {
+            .text {
+                color: #fff;
+            }
+
+            .avatar {
+                .icon {
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+.weekly-filter-row {
+    margin: toRem(-10) 0 toRem(30);
+}
+
+// HINT DROPDOWN 
+.hint-dropdown {
+    @include transition(0.4s);
+    position: absolute;
+    padding: toRem(10);
+    left: 0;
+    top: toRem(20);
+    width: toRem(180);
+    background: $brand-inverse;
+    border-radius: toRem(7);
+    display: none;
+    z-index: 999;
+
+    @include breakpoint-down(sm) {
+        padding: toRem(10) toRem(9);
+        width: toRem(160);
+        left: toRem(-80);
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: toRem(-5);
+        left: 25%;
+        transform: rotate(45deg);
+        @include square-shape(8);
+        background: $brand-inverse;
+
+        @include breakpoint-down(sm) {
+            @include square-shape(7);
+            top: toRem(-4);
+            left: 75%;
+        }
+    }
+
+    .item {
+        @include font-height(11, 17);
+        padding: toRem(1);
+        color: $white-text;
+
+        @include breakpoint-down(sm) {
+            @include font-height(10.5, 15);
+        }
+
+        @include breakpoint-down(xs) {
+            padding: toRem(1);
+            @include font-height(10.25, 15);
+        }
+    }
+}
+
+.move-top {
+    top: unset;
+    bottom: toRem(20);
+
+    &::after {
+        top: unset;
+        bottom: toRem(-5.5);
+        transform: rotate(45deg);
+
+        @include breakpoint-down(sm) {
+            top: unset;
+            left: 25%;
+            bottom: toRem(-4.5);
+        }
+    }
+}
+
+// DROPDOWN
+.dropdown {
+    position: absolute;
+    right: toRem(-10);
+    top: 105%;
+    padding: toRem(5);
+    width: toRem(160);
+
+    @include breakpoint-down(sm) {
+        position: fixed !important;
+        height: auto;
+        z-index: 9999;
+        bottom: 0 !important;
+        top: unset !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        border-radius: toRem(10) toRem(10) 0 0 !important;
+        animation: panel-slide-up 0.55s ease-in-out;
+        padding: toRem(15) 0 toRem(20);
+        box-shadow: 0 0 0 100000px rgba($black-text, .825);
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: toRem(-5);
+        right: toRem(20);
+        @include square-shape(10);
+        background: $white-text;
+        transform: rotate(45deg);
+
+        @include breakpoint-down(sm) {
+            transform: unset;
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            top: -100vh;
+            background: transparent;
+            z-index: -1;
+        }
+    }
+
+    .item {
+        @include font-height(11.5, 16);
+        @include transition(0.4s);
+        padding: toRem(7) toRem(10);
+        // display: block;
+        @include flex-row-start-nowrap;
+
+        @include breakpoint-down(sm) {
+            @include font-height(11.5, 18);
+            padding: toRem(12) toRem(16);
+            text-align: left;
+            letter-spacing: 0.025em;
+
+            &:last-of-type {
+                border-bottom: none;
+            }
+        }
+
+        .icon-cover {
+            background: transparent !important;
+            @include square-shape(20);
+            margin-right: toRem(10);
+            position: relative;
+            display: none;
+
+            @include breakpoint-down(sm) {
+                display: unset;
+            }
+
+            .icon {
+                @include center-placement;
+                color: $color-ash;
+                font-size: toRem(18);
+            }
+        }
+
+
+        &:hover {
+            background: $brand-inverse-light;
+        }
+    }
+}
+
+// POST CONTAINER STYLE
+.post-container-block {
+    position: relative;
+    border-radius: toRem(5);
+    background: $white-text;
+    box-shadow: 0 toRem(0.5) toRem(2.5) rgba(44, 44, 44, 0.15);
+    width: 100%;
+    height: auto;
+
+    .padded-area {
+        padding: toRem(15) toRem(16);
+
+        @include breakpoint-down(xl) {
+            padding: toRem(12);
+        }
+
+        @include breakpoint-down(lg) {
+            padding: toRem(13);
+        }
+
+        @include breakpoint-down(sm) {
+            padding: toRem(12);
+        }
+
+        @include breakpoint-down(xs) {
+            padding: toRem(11.5) toRem(8.5);
+        }
+    }
+}
+
+// POST CONTENT AREA 
+.post-content-area {
+    .content-area-card {
+        @include flex-row-start-nowrap;
+        align-items: flex-start;
+        padding: toRem(13);
+        border: toRem(1) solid $brand-inverse-light;
+        box-shadow: 0 toRem(0.2) toRem(1.25) rgba(44, 44, 44, 0.1);
+
+        @include breakpoint-down(xl) {
+            padding: toRem(12);
+            box-shadow: 0 toRem(0.5) toRem(2.5) rgba(44, 44, 44, 0.15);
+        }
+
+        @include breakpoint-down(lg) {
+            padding: toRem(14);
+        }
+
+        @include breakpoint-down(sm) {
+            padding: toRem(12);
+        }
+
+        @include breakpoint-down(xs) {
+            padding: toRem(9);
+        }
+
+        .left {
+            margin-right: toRem(12);
+
+            @include breakpoint-down(xl) {
+                margin-right: toRem(8);
+            }
+
+            @include breakpoint-down(lg) {
+                margin-right: toRem(13.5);
+            }
+
+            @include breakpoint-down(sm) {
+                margin-right: toRem(12);
+            }
+
+            @include breakpoint-down(xs) {
+                margin-right: toRem(8);
+            }
+
+            .avatar {
+                @include square-shape(38);
+
+                @include breakpoint-down(xl) {
+                    @include square-shape(34);
+                }
+
+                @include breakpoint-down(lg) {
+                    @include square-shape(38);
+                }
+
+                @include breakpoint-down(sm) {
+                    @include square-shape(38);
+                }
+
+                @include breakpoint-down(xs) {
+                    @include square-shape(37);
+                }
+
+                .icon {
+                    @include center-placement;
+                    font-size: toRem(20);
+
+                    @include breakpoint-down(xl) {
+                        font-size: toRem(18);
+                    }
+
+                    @include breakpoint-down(sm) {
+                        font-size: toRem(20);
+                    }
+
+                    @include breakpoint-down(xs) {
+                        font-size: toRem(19);
+                    }
+                }
+            }
+        }
+
+        .right {
+            .top-row {
+                margin-bottom: toRem(16);
+
+                .title-text {
+                    @include font-height(12.65, 19);
+                    margin-bottom: toRem(2);
+
+                    @include breakpoint-down(xl) {
+                        margin-bottom: toRem(1);
+                    }
+
+                    @include breakpoint-down(lg) {
+                        @include font-height(12.5, 22);
+                    }
+
+                    @include breakpoint-down(sm) {
+                        @include font-height(12, 19);
+                    }
+
+                    @include breakpoint-down(xs) {
+                        font-weight: 500 !important;
+                        // @include font-height(11, 17);
+                    }
+                }
+
+                .meta-text {
+                    @include font-height(11.75, 16);
+
+                    @include breakpoint-down(xl) {
+                        @include font-height(11.25, 16);
+                    }
+
+                    @include breakpoint-down(lg) {
+                        @include font-height(11.75, 16);
+                    }
+
+                    @include breakpoint-down(xs) {
+                        @include font-height(10.75, 15);
+                    }
+                }
+            }
+
+            .middle-row {
+                margin-bottom: toRem(25);
+
+                @include breakpoint-down(xl) {
+                    margin-bottom: toRem(25);
+                }
+
+                .info {
+                    @include flex-row-start-nowrap;
+                    margin-bottom: toRem(6);
+
+                    .title {
+                        width: toRem(70);
+
+                        @include breakpoint-down(xs) {
+                            width: toRem(50);
+                        }
+                    }
+                }
+
+                .date-row {
+
+                    .title,
+                    .value {
+                        @include font-height(12, 18);
+
+                        @include breakpoint-down(lg) {
+                            @include font-height(12.5, 17);
+                        }
+
+                        @include breakpoint-down(sm) {
+                            @include font-height(12, 17);
+                        }
+
+                        @include breakpoint-down(xs) {
+                            @include font-height(11, 14);
+                        }
+                    }
+                }
+
+                .status-row {
+
+                    .title,
+                    .value {
+                        @include font-height(11.25, 15);
+
+                        @include breakpoint-down(sm) {
+                            @include font-height(11, 13);
+                        }
+
+                        @include breakpoint-down(xs) {
+                            @include font-height(10.5, 12);
+                        }
+                    }
+                }
+            }
+
+            .bottom-row {
+                @include flex-row-start-nowrap;
+                margin-bottom: toRem(5);
+
+                .btn {
+                    color: $brand-navy;
+                    background: $brand-accent-light;
+                    border: toRem(1) solid $brand-accent;
+                    font-size: toRem(10.55);
+                    padding: toRem(12) toRem(32);
+                    margin-right: toRem(20);
+                    @include transition(0.4s);
+
+                    @include breakpoint-down(xl) {
+                        font-size: toRem(10.5);
+                        padding: toRem(9.5) toRem(28);
+                        margin-right: toRem(15);
+                    }
+
+                    @include breakpoint-down(sm) {
+                        font-size: toRem(10.25);
+                        padding: toRem(9) toRem(27);
+                        margin-right: toRem(12);
+                    }
+
+                    @include breakpoint-down(xs) {
+                        font-size: toRem(9.55);
+                        padding: toRem(11) toRem(26);
+                        margin-right: toRem(10);
+                    }
+
+                    &:hover {
+                        background: $brand-inverse-light;
+                        border: toRem(1) solid $brand-inverse;
+                        box-shadow: 0 toRem(1) toRem(4) rgba(0, 0, 0, 0.15);
+                    }
+                }
+
+                .options {
+                    position: relative;
+                    @include square-shape(35);
+                    background: $border-grey-light;
+
+                    .icon {
+                        @include center-placement;
+                        font-size: toRem(21);
+                    }
+
+                    &:hover {
+                        background: $brand-inverse-light;
+                    }
+
+                    .dropdown {
+                        width: toRem(200);
+                        top: toRem(-50);
+                        left: toRem(38);
+
+                        @include breakpoint-down(xl) {
+                            width: toRem(170);
+                        }
+
+                        @include breakpoint-down(sm) {
+                            top: toRem(-105);
+                        }
+
+                        @include breakpoint-custom-down(420) {
+                            width: toRem(155);
+                        }
+
+                        @include breakpoint-custom-down(390) {
+                            width: toRem(165);
+                            left: toRem(-60);
+                            top: toRem(-152);
+                        }
+
+                        &:before {
+                            left: -3%;
+                            top: 60%;
+
+                            @include breakpoint-down(sm) {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.content-details {
+    @include flex-row-start-nowrap;
+    @include font-height(12, 14);
+    margin-top: toRem(10);
+    margin-bottom: toRem(2);
+
+    @include breakpoint-down(sm) {
+        @include font-height(11.5, 14);
+    }
+
+    @include breakpoint-down(xs) {
+        @include font-height(11, 14);
+    }
+
+    .text {
+        color: darken($color-ash-lighter, 12%);
+    }
+
+    .link {
+        &:hover {
+            color: $brand-inverse;
+        }
+    }
+
+    .bullet {
+        position: relative;
+        top: toRem(1);
+        @include square-shape(5);
+        border-radius: 50%;
+        margin: 0 toRem(10);
+        background: $border-grey;
+
+        @include breakpoint-down(xs) {
+            margin: 0 toRem(8);
+        }
+    }
+}
+
+.library-container,
+.page-container {
+    .title-row {
+        @include flex-row-between-nowrap;
+        margin-bottom: toRem(30);
+
+        @include breakpoint-down(xl) {
+            margin-bottom: toRem(25);
+        }
+
+        @include breakpoint-down(lg) {
+            margin-bottom: toRem(18);
+        }
+
+        .left {
+            @include flex-row-start-nowrap;
+
+            .avatar {
+                margin-right: toRem(20);
+                @include square-shape(48);
+                border-radius: toRem(9);
+
+                @include breakpoint-down(lg) {
+                    @include square-shape(44);
+                    margin-right: toRem(16);
+                }
+
+                @include breakpoint-down(sm) {
+                    @include square-shape(40);
+                }
+
+                @include breakpoint-down(xs) {
+                    @include square-shape(38);
+                    margin-right: toRem(12);
+                }
+
+                .icon {
+                    @include center-placement;
+                    font-size: toRem(22);
+
+                    @include breakpoint-down(xl) {
+                        font-size: toRem(20);
+                    }
+
+                    @include breakpoint-down(sm) {
+                        font-size: toRem(19);
+                    }
+                }
+            }
+
+            .title {
+                @include font-height(21, 25);
+
+                @include breakpoint-down(lg) {
+                    @include font-height(18, 24);
+                }
+
+                @include breakpoint-down(sm) {
+                    @include font-height(17.5, 19);
+                }
+            }
+
+            .meta-text {
+                @include font-height(13, 16);
+
+                @include breakpoint-down(lg) {
+                    @include font-height(12.75, 16);
+                }
+
+                @include breakpoint-down(xs) {
+                    @include font-height(12.5, 16);
+                }
+
+                @include breakpoint-custom-down(450) {
+                    @include font-height(11.75, 15);
+                }
+            }
+        }
+    }
+}
+
+.library-container {
+    width: 67%;
+
+    @include breakpoint-down(xl) {
+        width: 75%;
+    }
+
+    @include breakpoint-down(lg) {
+        width: 83%;
+    }
+
+    @include breakpoint-down(md) {
+        width: 100%;
+    }
+
+    .title-row {
+        margin-top: toRem(110);
+
+        @include breakpoint-down(sm) {
+            margin-top: toRem(90);
+            margin-bottom: toRem(20);
+        }
+
+        @include breakpoint-down(xs) {
+            margin-top: toRem(72);
+        }
+
+        .left {
+            .avatar {
+                @include breakpoint-down(xs) {
+                    @include square-shape(36);
+                    margin-right: toRem(8);
+                }
+
+                .icon {
+                    @include breakpoint-down(sm) {
+                        font-size: toRem(18);
+                    }
+                }
+            }
+
+            .title {
+                @include breakpoint-down(xs) {
+                    @include font-height(14, 18);
+                }
+            }
+
+            .meta-text {
+                @include breakpoint-down(xs) {
+                    @include font-height(11.5, 16);
+                }
+            }
+        }
+    }
+}
+
+// FILTER 
+.filter {
+    background: $white-text;
+    padding: toRem(7) toRem(12);
+    @include flex-row-end-nowrap;
+
+    @include breakpoint-down(xl) {
+        padding: toRem(6) toRem(13);
+    }
+
+    @include breakpoint-down(lg) {
+        padding: toRem(5) toRem(12);
+    }
+
+    @include breakpoint-down(xs) {
+        padding: toRem(1.5) toRem(13.5) toRem(1.5) toRem(7);
+    }
+
+    .avatar {
+        @include square-shape(22);
+
+        @include breakpoint-down(xs) {
+            @include square-shape(30);
+        }
+
+        .icon {
+            @include center-placement;
+            color: $color-grey-dark;
+            font-size: toRem(13);
+            margin-top: toRem(0.5);
+
+            @include breakpoint-down(lg) {
+                font-size: toRem(13);
+            }
+
+            @include breakpoint-down(xs) {
+                font-size: toRem(13.5);
+                margin-left: toRem(1);
+            }
+        }
+    }
+
+    .text {
+        color: $color-grey-dark;
+        @include font-height(13, 19);
+
+        @include breakpoint-down(xl) {
+            @include font-height(13, 19);
+        }
+
+        @include breakpoint-down(lg) {
+            @include font-height(12.75, 19);
+        }
+
+        @include breakpoint-down(md) {
+            @include font-height(12.5, 19);
+        }
+
+        @include breakpoint-down(xs) {
+            @include font-height(12.25, 17);
+        }
+    }
+
+    &:hover {
+        background: $brand-primary !important;
+
+        .avatar {
+            .icon {
+                color: $white-text;
+            }
+        }
+
+        .text {
+            color: $white-text;
+        }
+    }
+}
+
+// MANAGEMENT TOP ROW 
+.management-top-row {
+    @include flex-row-between-nowrap;
+    margin-bottom: toRem(22);
+
+    .counter {
+        @include font-height(12.75, 18);
+        padding-left: toRem(3.5);
+
+        @include breakpoint-down(lg) {
+            @include font-height(12.75, 17);
+        }
+
+        @include breakpoint-down(xs) {
+            @include font-height(12.25, 17);
+        }
+    }
+
+    .manage-btn {
+        cursor: pointer;
+        @include flex-row-end-nowrap;
+
+        .avatar {
+            @include square-shape(27);
+            margin-right: toRem(5);
+
+            .icon {
+                @include center-placement;
+                font-size: toRem(18);
+                color: $color-grey-dark;
+
+                @include breakpoint-down(lg) {
+                    font-size: toRem(17);
+                }
+
+                @include breakpoint-down(md) {
+                    margin-top: toRem(-1);
+                }
+
+                @include breakpoint-down(xs) {
+                    font-size: toRem(15);
+                }
+            }
+        }
+
+        .text {
+            @include font-height(12.75, 17);
+            color: $color-grey-dark;
+
+            @include breakpoint-down(lg) {
+                @include font-height(12, 17);
+            }
+
+            @include breakpoint-down(xs) {
+                @include font-height(11.45, 16);
+            }
+        }
+
+        &:hover {
+            .avatar {
+                .icon {
+                    color: $brand-accent;
+                }
+            }
+
+            .text {
+                color: darken($brand-accent, 6%);
+            }
+        }
+    }
+}
+
+// POST CONTENT SPACER 
+.spacer {
+    margin-right: toRem(10);
+    @include rectangle-shape(35, 1);
+
+    @include breakpoint-down(xl) {
+        margin-right: toRem(7);
+        @include rectangle-shape(32, 1);
+    }
+
+    @include breakpoint-down(lg) {
+        margin-right: toRem(10);
+        @include rectangle-shape(33, 1);
+    }
+
+    @include breakpoint-down(sm) {
+        margin-right: toRem(8);
+        @include rectangle-shape(32, 1);
+    }
+
+    @include breakpoint-down(xs) {
+        display: none;
+    }
+}
+
+.onboading-tab-switcher {
+    @include flex-row-center-nowrap;
+    margin: toRem(10) 0 toRem(20);
+    padding: toRem(5);
+    width: max-content;
+  
+    @include breakpoint-down(lg) {
+      margin: toRem(10) 0 toRem(15);
+    }
+  
+    @include breakpoint-down(xs) {
+      border-radius: toRem(18) !important;
+      padding: toRem(4.5);
+    }
+  
+    .tab {
+      @include font-height(13.5, 18);
+      @include transition(0.2s);
+      padding: toRem(10) toRem(26);
+      border-radius: toRem(13);
+      color: $border-grey-dark;
+      width: max-content;
+      text-align: center;
+      cursor: pointer;
+  
+      &:hover {
+        background: rgba($brand-accent-light, 0.5);
+      }
+  
+      @include breakpoint-down(xl) {
+        padding: toRem(8) toRem(20);
+      }
+  
+      @include breakpoint-down(sm) {
+        @include font-height(12.75, 16);
+      }
+    }
+  
+    .active-tab {
+      background: $brand-inverse-light;
+      @include font-height(13.5, 18);
+      color: $brand-navy;
+      font-weight: 700;
+  
+      @include breakpoint-down(sm) {
+        @include font-height(12.75, 17);
+      }
+    }
+  }
+
+.tour-description {
+    box-shadow: toRem(7) 0 toRem(25) rgba($black-text, 0.15);
+    padding: toRem(18) toRem(15) toRem(16);
+    width: toRem(268);
+    top: toRem(100);
+    left: toRem(55);
+  
+    &::after {
+      content: "";
+      position: absolute;
+      top: toRem(-7);
+      left: 15%;
+      transform: rotate(45deg);
+      @include square-shape(18);
+      background: $white-text;
+  
+      @include breakpoint-down(sm) {
+        @include square-shape(15);
+        top: toRem(-4);
+      }
+    }
+  
+    .tour-text {
+      @include font-height(12, 19);
+      margin-bottom: toRem(25);
+      
+      @include breakpoint-down(sm) {
+        @include font-height(11.75, 19);
+        margin-bottom: toRem(22);
+      }
+
+      @include breakpoint-down(xs) {
+        @include font-height(11.5, 19);
+      }
+    }
+  
+    .tour-cta {
+      @include flex-row-between-nowrap;
+  
+      .btn {
+        padding: toRem(8) toRem(16);
+        font-size: toRem(10.5);
+
+        @include breakpoint-down(sm) {
+            font-size: toRem(10.25);
+        }
+      }
+    }
+  }
+  
+  .tour-index {
+    z-index: 3000;
+  }

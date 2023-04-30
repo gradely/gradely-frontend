@@ -1,0 +1,200 @@
+// ZOOM OUT 
+@keyframes zoom-out {
+    0% {
+        transform: translate(-50%, -50%) scale(.45);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+// DROPDOWN 
+.dropdown {
+    position: absolute;
+    right: toRem(12);
+    top: toRem(45);
+    border-radius: toRem(5);
+    background: $white-text;
+    z-index: 9;
+    padding: toRem(10);
+    box-shadow: 0 toRem(1) toRem(4) rgba(0, 0, 0, 0.15);
+
+    .item {
+        @include transition(0.4s);
+        @include font-height(11, 16);
+        border-radius: toRem(3);
+        padding: toRem(6) toRem(8);
+        cursor: pointer;
+        color: $color-ash;
+
+        @include breakpoint-down(lg) {
+            padding: toRem(5) toRem(8);
+        }
+
+        @include breakpoint-down(xs) {
+            @include font-height(10.75, 16);
+        }
+
+        &:hover {
+            background: $brand-inverse-light;
+        }
+    }
+}
+
+// DROPDOWN
+.dropdown {
+    position: absolute;
+    right: toRem(-10);
+    top: 105%;
+    padding: toRem(5);
+    width: toRem(160);
+
+    @include breakpoint-down(sm) {
+        position: fixed !important;
+        height: auto;
+        z-index: 9999;
+        bottom: 0 !important;
+        top: unset !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        border-radius: toRem(10) toRem(10) 0 0 !important;
+        animation: panel-slide-up 0.55s ease-in-out;
+        padding: toRem(15) 0 toRem(20);
+        box-shadow: 0 0 0 100000px rgba($black-text, .825);
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: toRem(-5);
+        right: toRem(20);
+        @include square-shape(10);
+        background: $white-text;
+        transform: rotate(45deg);
+
+        @include breakpoint-down(sm) {
+            transform: unset;
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            top: -100vh;
+            background: transparent;
+            z-index: -1;
+        }
+    }
+
+    .item {
+        @include font-height(11.5, 16);
+        @include transition(0.4s);
+        padding: toRem(7) toRem(10);
+        // display: block;
+        @include flex-row-start-nowrap;
+
+        @include breakpoint-down(sm) {
+            @include font-height(11.5, 18);
+            padding: toRem(12) toRem(16);
+            text-align: left;
+            letter-spacing: 0.025em;
+
+            &:last-of-type {
+                border-bottom: none;
+            }
+        }
+
+        .icon-cover {
+            background: transparent !important;
+            @include square-shape(20);
+            margin-right: toRem(10);
+            position: relative;
+            display: none;
+
+            @include breakpoint-down(sm) {
+                display: unset;
+            }
+
+            .icon {
+                @include center-placement;
+                color: $color-ash;
+                font-size: toRem(18);
+            }
+        }
+
+
+        &:hover {
+            background: $brand-inverse-light;
+        }
+    }
+}
+
+// MODAL COMPS 
+.rounded-chip {
+    @include flex-row-center-nowrap;
+    @include font-height(11.5, 16);
+    padding: toRem(8.5) toRem(14);
+    border-radius: toRem(15);
+    width: max-content;
+}
+
+.class-type-chip {
+    .indicator {
+        border: toRem(3.5) solid $brand-tonic;
+        @include square-shape(11);
+    }
+
+    .text {
+        letter-spacing: 0.02em;
+    }
+}
+
+.student-chip {
+    margin-right: toRem(10);
+
+    .avatar {
+        @include square-shape(22);
+        margin-right: toRem(8);
+        border-radius: toRem(10);
+
+        .avatar-text {
+            font-size: toRem(10);
+        }
+    }
+
+    .text {
+        color: $color-text;
+    }
+}
+
+.class-item-row {
+    @include flex-row-start-nowrap;
+    align-items: flex-start;
+    margin-bottom: toRem(15);
+
+    .icon {
+        margin-right: toRem(20);
+        color: $brand-inverse;
+        font-size: toRem(20);
+    }
+
+    .info {
+        border-bottom: toRem(1) solid $brand-inverse-light;
+        @include flex-row-between-nowrap;
+        padding-bottom: toRem(14);
+        width: 100%;
+
+        .title {
+            @include font-height(13.25, 18);
+            color: $color-ash;
+        }
+
+        .value {
+            @include font-height(13.5, 19);
+            color: $color-text;
+        }
+    }
+}

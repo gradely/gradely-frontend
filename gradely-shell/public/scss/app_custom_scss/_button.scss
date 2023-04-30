@@ -1,0 +1,287 @@
+.control-btn {
+    position: relative;
+    @include flex-row-center-nowrap;
+    @include transition(0.4s);
+    background: $color-white;
+    color: $color-grey-dark;
+    padding: toRem(8) toRem(14);
+
+    .text {
+        @include font-height(11.5, 16);
+    }
+
+    .new-indicator {
+        @include square-shape(7);
+        font-size: toRem(11);
+        border-radius: 50%;
+        position: absolute;
+        right: toRem(6);
+        top: toRem(-1);
+
+        .indicator {
+            @include center-placement;
+        }
+    }
+
+    &:hover {
+        background: $brand-accent-light;
+    }
+}
+
+.load-more-btn {
+    padding: toRem(11) toRem(26);
+    margin: toRem(40) auto;
+    font-size: toRem(10.25);
+    border-width: toRem(1) !important;
+
+    @include breakpoint-down(md) {
+        margin: toRem(40) auto toRem(25);
+    }
+
+    @include breakpoint-down(sm) {
+        margin: toRem(40) auto toRem(20);
+        padding: toRem(10) toRem(25);
+        font-size: toRem(10.5);
+    }
+
+    @include breakpoint-down(xs) {
+        margin: toRem(30) auto toRem(25);
+        padding: toRem(9) toRem(20);
+        font-size: toRem(10.25);
+    }
+}
+
+// NAV SWITCHER 
+.nav-switcher {
+    @include flex-row-between-nowrap;
+    padding: toRem(8) toRem(13);
+    width: max-content;
+
+    @include breakpoint-down(xs) {
+        padding: toRem(6.75) toRem(9);
+        border-radius: 19px !important;
+    }
+
+    &:hover {
+        background: darken($brand-navy, 5%) !important;
+        box-shadow: 0 toRem(3) toRem(5) rgba(0, 0, 0, 0.15);
+    }
+
+    .icon-wrapper {
+        position: relative;
+        @include square-shape(26);
+    }
+    
+    .icon-one {
+        margin-right: toRem(6);
+        
+        @include breakpoint-down(xs) {
+            margin-right: toRem(3);
+            display: none;
+        }
+
+        .icon {
+            @include center-placement;
+            font-size: toRem(21);
+
+            @include breakpoint-down(xs) {
+                font-size: toRem(18);
+            }
+        }
+    }
+
+    .item {
+        @include font-height(11.85, 16);
+        @include transition(0.4s);
+        max-width: toRem(180);
+        color: $color-white;
+        width: auto;
+
+        @include breakpoint-down(sm) {
+            max-width: toRem(160);
+        }
+
+        @include breakpoint-down(xs) {
+            @include font-height(12, 15);
+            padding-left: toRem(9);
+            max-width: toRem(115);
+        }
+
+        @include breakpoint-custom-down(360) {
+            max-width: toRem(75);
+        }
+
+        @include breakpoint-custom-down(310) {
+            max-width: toRem(60);
+        }
+    }
+
+    .icon-two {
+        margin-left: toRem(10);
+
+        @include breakpoint-down(xs) {
+            margin-left: toRem(8);
+        }
+
+        .icon {
+            @include center-placement;
+            font-size: toRem(18.5);
+
+            @include breakpoint-down(xs) {
+                font-size: toRem(17.5);
+            }
+        }
+    }
+}
+
+// MODE NAV SWITCHER 
+.mode-nav-switcher {
+    @include flex-row-between-nowrap;
+    padding: toRem(6.5) toRem(16);
+    background: $color-white;
+    width: max-content;
+
+    &:hover {
+        background: rgba($brand-accent-light, 0.75);
+        box-shadow: 0 toRem(1) toRem(2) rgba(0, 0, 0, 0.15);
+    }
+
+    .icon-wrapper {
+        position: relative;
+        @include square-shape(26);
+    }
+
+    .icon-one {
+        margin-right: toRem(6);
+
+        .icon {
+            @include center-placement;
+            font-size: toRem(18);
+        }
+    }
+
+    .item {
+        @include font-height(12, 16);
+        @include transition(0.4s);
+        max-width: toRem(120);
+        width: auto;
+    }
+
+    .icon-two {
+        margin-left: toRem(3);
+        margin-right: toRem(-5);
+
+        .icon {
+            @include center-placement;
+            font-size: toRem(11);
+        }
+    }
+}
+
+.custom-teacher-nav-switcher {
+    @include breakpoint-down(md) {
+        padding: toRem(6);
+        border-radius: toRem(10) !important;
+
+        .icon-one {
+            margin-right: 0;
+
+            .icon {
+                font-size: toRem(20);
+            }
+        }
+
+        .item {
+            display: none;
+        }
+
+        .icon-two {
+            display: none;
+        }
+    }
+
+    @include breakpoint-down(xs) {
+        padding: toRem(4.5);
+
+        .icon-one {
+            .icon {
+                font-size: toRem(18);
+            }
+        }
+    }
+}
+
+.btn-soft-accent {
+    background: $brand-accent-light;
+    border: toRem(1) solid $brand-accent;
+    color: $brand-navy;
+
+
+    &:hover {
+        background: $brand-inverse-light;
+        border: toRem(1) solid $brand-inverse;
+    }
+}
+
+.btn-soft-tonic {
+    background: $brand-red-light;
+    border: toRem(1) solid $brand-red;
+    color: $brand-navy;
+
+
+    &:hover {
+        background: $brand-inverse-light;
+        border: toRem(1) solid $brand-inverse;
+    }
+}
+
+.btn-soft-grey {
+    background: $color-white;
+    color: $brand-navy;
+
+    &:hover {
+        background: $brand-accent-light;
+    }
+}
+
+
+.close-dialog-btn {
+    position: absolute;
+    top: toRem(50);
+    right: toRem(50);
+    background: $brand-inverse-light;
+    @include square-shape(44);
+
+    @include breakpoint-down(lg) {
+        @include square-shape(38);
+    }
+
+    @include breakpoint-down(md) {
+        top: toRem(40);
+        right: toRem(30);
+    }
+
+    @include breakpoint-down(xs) {
+        @include square-shape(42);
+        top: toRem(20);
+        right: toRem(12);
+    }
+
+    .icon {
+        @include center-placement;
+        font-size: toRem(20);
+        color: $brand-navy;
+
+        @include breakpoint-down(lg) {
+            font-size: toRem(18);
+        }
+
+        @include breakpoint-custom-down(380) {
+            font-size: toRem(15);
+        }
+    }
+
+    &:hover {
+        background: $brand-accent-light;
+    }
+}

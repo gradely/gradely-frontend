@@ -1,0 +1,66 @@
+/* =================
+LABEL COMPACT STYLING
+==================== */
+@mixin label_compact {
+    position: absolute;
+    top: toRem(-11);
+    left: toRem(24);
+    background: $white-text;
+    padding: toRem(1) toRem(4);
+    text-transform: uppercase;
+    font-size: toRem(12.5);
+    color: $brand-primary;
+    font-weight: 600;
+    z-index: 9;
+    
+    @include breakpoint-down(xs) {
+        left: toRem(8) !important;
+        font-size: toRem(12);
+    }
+}
+
+// INPUT AND LABEL COMPACT STYLING
+.compact-row {
+    position: relative;
+    margin-bottom: toRem(32);
+
+    .label-compact {
+        @include label_compact;
+    }
+
+    .label-sm {
+        top: toRem(-8);
+        left: toRem(10);
+        text-transform: unset !important;
+        letter-spacing: 0.023rem;
+    }
+
+    input,
+    select {
+        @include font-height(12.75, 16);
+
+        &::placeholder {
+            font-size: toRem(13);
+        }
+    }
+}
+
+.form-input-wrapper {
+    position: relative;
+
+    .mx-datepicker {
+        width: 100%;
+    }
+
+    .icon {
+        font-size: toRem(16) !important;
+        color: $color-text !important;
+        @include center-y;
+        right: toRem(-4);
+        z-index: 99;
+
+        @include breakpoint-down(xs) {
+            right: toRem(1);
+        }
+    }
+}

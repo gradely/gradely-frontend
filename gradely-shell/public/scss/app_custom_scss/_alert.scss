@@ -1,0 +1,89 @@
+.alert-wrapper {
+    position: fixed;
+    z-index: 6999;
+    border-radius: 5px;
+    overflow: hidden;
+    background: rgba($white-text, 0.98);
+    top: toRem(80);
+    right: toRem(10);
+    min-width: auto;
+    max-width: 35%;
+    width: auto;
+    @include transition(0.8s);
+    animation: panel-slide-right 0.8s ease-in-out forwards;
+
+    @include breakpoint-down(lg) {
+        max-width: 40%;
+    }
+
+    @include breakpoint-down(md) {
+        top: toRem(75);
+        max-width: 50%;
+    }
+
+    @include breakpoint-down(sm) {
+        max-width: 70%;
+    }
+
+    @include breakpoint-down(xs) {
+        top: toRem(65);
+        max-width: 90%;
+    }
+
+    .alert-box {
+        @include flex-row-between-nowrap;
+        padding: toRem(15);
+
+        @include breakpoint-down(xl) {
+            padding: toRem(13);
+        }
+
+        @include breakpoint-down(md) {
+            padding: toRem(12);
+        }
+
+        @include breakpoint-down(xs) {
+            padding: toRem(11) toRem(12);
+        }
+
+        .content {
+            @include flex-row-start-nowrap;
+            margin-right: toRem(50);
+
+            @include breakpoint-down(md) {
+                margin-right: toRem(30);
+            }
+
+            .icon {
+                font-size: toRem(18);
+                margin-right: toRem(10);
+
+                @include breakpoint-down(xs) {
+                    font-size: toRem(17);
+                }
+            }
+
+            .text {
+                @include font-height(12.75, 18);
+
+                @include breakpoint-down(lg) {
+                    @include font-height(13, 17);
+                }
+
+                @include breakpoint-down(md) {
+                    @include font-height(12.5, 17);
+                }
+
+                @include breakpoint-down(xs) {
+                    @include font-height(12.35, 16);
+                }
+            }
+        }
+
+        .icon-close {
+            @include breakpoint-down(lg) {
+                font-size: toRem(14);
+            }
+        }
+    }
+}

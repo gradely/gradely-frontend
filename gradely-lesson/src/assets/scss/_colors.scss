@@ -1,0 +1,22 @@
+// CUSTOM COLORS
+$darkish-doc-blue: #285290;
+$darkish-excel-green: #2d7930;
+$darkish-ppt-red: #cc4525;
+$darkish-pdf-red: #f70000;
+$darkish-txt-grey: #546a7a;
+$light-doc-blue: #dfeafa;
+$light-excel-green: #def8de;
+$light-ppt-red: #f8e2de;
+$light-pdf-red: #f7e6e6;
+$light-txt-grey: #dfedf7;
+$custom-color: () !default;
+$custom-color: map-merge( ( 'darkish-doc-blue': $darkish-doc-blue, 'darkish-excel-green': $darkish-excel-green, 'darkish-ppt-red': $darkish-ppt-red, 'darkish-pdf-red': $darkish-pdf-red, 'darkish-txt-grey': $darkish-txt-grey, 'light-doc-blue': $light-doc-blue, 'light-excel-green': $light-excel-green, 'light-ppt-red': $light-ppt-red, 'light-pdf-red': $light-pdf-red, 'light-txt-grey': $light-txt-grey, ), $custom-color);
+@each $color-name,
+$color in $custom-color {
+    .#{$color-name} {
+        color: $color !important;
+    }
+    .#{$color-name}-bg {
+        background-color: $color !important;
+    }
+}

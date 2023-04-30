@@ -1,0 +1,227 @@
+<template>
+  <div class="preview-illustration">
+    <div class="preview-illustration__media">
+      <div class="preview-illustration__transparent">
+        <div class="preview-illustration__actions">
+          <div class="preview-illustration__actions--left">
+            <i class="icon-image"></i>
+            <div class="font-weight-700">Illustration</div>
+          </div>
+
+          <div class="close-container">
+            <i class="icon-close"></i>
+          </div>
+        </div>
+      </div>
+      <img src="@/assets/static/cardimage.jpg" alt="card" class="preview-illustration__img" />
+    </div>
+
+    <div class="preview-illustration__body">
+      <div class="preview-illustration__top">
+        <div class="preview-illustration__top--left">
+          <div class="preview-illustration__title m-0 font-weight-700">Vegetables</div>
+          <div class="preview-illustration__subtitle">
+            <div class="font-weight-400 color-grey-dark">Agriculture</div>
+            <div class="dot"></div>
+            <div class="preview-illustration__views font-weight-400 color-grey-dark">
+              <span>4,405</span> Views
+            </div>
+          </div>
+        </div>
+        <div class="preview-illustration__top--right">
+          <i class="icon-share"></i>
+          <div class="font-weight-700">Share Lesson</div>
+        </div>
+      </div>
+      <div class="preview-illustration__bottom">
+        <div class="preview-illustration__like">
+          <i class="icon-thumbs-up"></i>
+          <span class="font-weight-400">1.2k</span>
+        </div>
+        <div class="preview-illustration__dislike">
+          <i class="icon-thumbs-down"></i>
+          <span class="font-weight-400">700</span>
+        </div>
+        <div class="preview-illustration__download">
+          <i class="icon-cloud-download"></i>
+          <div class="font-weight-400">Download</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+
+@Component
+export default class extends Vue {}
+</script>
+
+<style lang="scss" scoped>
+.preview-illustration {
+  // width: 870px;
+  width: 100%;
+  border-radius: 20px;
+
+  &__like {
+    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    border: 1px solid #f5f5f5;
+    border-radius: 25px;
+    background: #f5f5f5;
+    font-size: 14px;
+    color: #757575;
+  }
+  &__dislike {
+    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    border: 1px solid #f5f5f5;
+    border-radius: 25px;
+    background: #f5f5f5;
+    font-size: 14px;
+    color: #757575;
+  }
+  &__download {
+    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    border: 1px solid #f5f5f5;
+    border-radius: 25px;
+    background: #f5f5f5;
+    font-size: 14px;
+    color: #757575;
+  }
+}
+
+.preview-illustration__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 40px;
+  // box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
+  border-radius: 0 0 10px 10px;
+  background: #ffffff;
+  border: none;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
+
+  .preview-illustration__top {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+
+    &--right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #113255;
+      font-size: 12px;
+      background: #fceacf;
+      border: 1px solid #faa017;
+      padding: 12px 24px 12px 18px;
+      border-radius: 30px;
+
+      .icon-share {
+        margin-right: 11.67px;
+      }
+    }
+  }
+
+  .preview-illustration__bottom {
+    display: flex;
+  }
+}
+
+.preview-illustration__media {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  border-radius: 10px 10px 0 0;
+  background: $brand-inverse-light;
+
+  .preview-illustration__transparent {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30%;
+    align-items: center;
+    border-radius: 10px 10px 0 0;
+    // background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+
+    .preview-illustration__actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 20px;
+
+      .close-container {
+        display: grid;
+        place-items: center;
+        border: 1px solid #f5f5f5;
+        width: 48px;
+        height: 48px;
+        border-radius: 100%;
+        background: #f5f5f5;
+
+        .icon-close {
+          color: #113255;
+        }
+      }
+
+      &--left {
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        color: #ffffff;
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 30px;
+        padding: 8px 16px;
+
+        .icon-image {
+          margin-right: 2px;
+        }
+      }
+    }
+  }
+
+  .preview-illustration__img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    border-radius: 10px 10px 0 0;
+  }
+}
+.preview-illustration__title {
+  font-size: 21px;
+  color: #353535;
+}
+.preview-illustration__subtitle {
+  display: flex;
+  // justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  margin: 4px 0;
+
+  div {
+    margin-right: 10px;
+  }
+
+  .dot {
+    border-radius: 100%;
+    background: #d5d5d5;
+    width: 4px;
+    height: 4px;
+  }
+}
+</style>

@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/dev/vue/teacher-lesson
+hooks:
+  AfterInstall:
+    - location: scripts/install-app.sh
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: scripts/start-app.sh
+      timeout: 300
+      runas: root
