@@ -7,14 +7,14 @@ const serviceList = [
     name: "store",
     port: 8090,
   },
-  {
-    name: "shell",
-    port: 8091,
-  },
-  {
-    name: "auth",
-    port: 8092,
-  },
+  // {
+  //   name: "shell",
+  //   port: 8091,
+  // },
+  // {
+  //   name: "auth",
+  //   port: 8092,
+  // },
   {
     name: "lms",
     port: 8093,
