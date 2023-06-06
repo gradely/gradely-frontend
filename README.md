@@ -4,4 +4,4 @@ Gradely is a complete LMS for schools, teachers, parents, and students. Features
 
 ## Documentation
 
-You can find the app documentation (for installation and usage) at [https://observant-bonobo-44b.notion.site/Gradely-Frontend-Documentation-96c072989bf2461aa6f9105c32cb32a0](Notion Site)
+You can find the app documentation (for installation and usage) at [Notion Site](https://observant-bonobo-44b.notion.site/Gradely-Frontend-Documentation-96c072989bf2461aa6f9105c32cb32a0)
